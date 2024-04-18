@@ -1,8 +1,84 @@
+
+import SpriteSheet from "react-responsive-spritesheet"
+
+/*
+STEPS
+
+Get mouse position relative to screen or whatever
+When mouse is left progress to the left until frame 1
+When mouse is right progress to the right until frame 30
+
+
+OR
+Get mouse position relative to obj or screen
+Represent that position as a percentage of horizontal screen
+Use goToAndPause to progress to the horizontal percentage in the frames
+
+*/
+
+
 const IconSkills = () => {
     return (
-        <div>
-            <canvas id ="canvas"></canvas>
-            <script type="text/javascript" src="script.js"></script>
+        <div className="flex flex-wrap gap-5 mb-10 border-orange-300 border justify-center">
+            <SpriteSheet
+                className=""
+                image={`src/assets/C_spritesheet.png`}
+                widthFrame={70}
+                heightFrame={50}
+                steps={30}
+                fps={10}
+                autoplay={true}
+                loop={true}
+                isResponsive={false}
+                />
+
+                <SpriteSheet
+                className=""
+                image={`src/assets/PY_spritesheet.png`}
+                widthFrame={70}
+                heightFrame={50}
+                steps={30}
+                fps={10}
+                autoplay={true}
+                loop={true}
+                isResponsive={false}
+                />
+
+                <SpriteSheet
+                className=""
+                image={`src/assets/JS_spritesheet.png`}
+                widthFrame={70}
+                heightFrame={50}
+                steps={30}
+                fps={10}
+                autoplay={true}
+                loop={true}
+                isResponsive={false}
+                />
+
+                <SpriteSheet
+                className=""
+                image={`src/assets/HTML_spritesheet.png`}
+                widthFrame={70}
+                heightFrame={50}
+                steps={30}
+                fps={10}
+                autoplay={true}
+                loop={true}
+                isResponsive={false}
+                />
+
+                <SpriteSheet
+                className=""
+                image={`src/assets/CSS_spritesheet.png`}
+                widthFrame={70}
+                heightFrame={50}
+                steps={30}
+                fps={10}
+                autoplay={true}
+                loop={true}
+                isResponsive={false}
+                />
         </div>
         
         )
