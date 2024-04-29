@@ -1,8 +1,9 @@
 //import React from 'react';
+import "../index.css";
 
 const Contact = () => {
     return (
-        <div>Contact</div>
+        <div className="contact-section border border-purple-600">Contact</div>
     )
 }
 

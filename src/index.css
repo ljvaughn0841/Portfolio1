@@ -22,12 +22,6 @@ body:has(.card[data-color="green"]:hover) {
   background-color: rgb(var(--green-rgb) / 25%);
 }
 
-.react-responsive-spritesheet-container__move {
-image-rendering: pixelated;
-image-rendering: -moz-crisp-edges;
-image-rendering: crisp-edges;
-}
-
 @layer utilities {
   .max-container {
     @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
@@ -188,3 +182,45 @@ image-rendering: crisp-edges;
   box-shadow: 0.6vmin 0.6vmin #fff, 1vmin 1vmin #d2e4ff, 1vmin 1vmin #d2e4ff,
     0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
 }
+
+
+/* Sprite Sheet Animation Stuff */
+
+.react-responsive-spritesheet-container__move {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  }
+
+  .hero-section {
+    height: 150vh;
+  }
+
+  .skills-section {
+    height: 100vh;
+  }
+
+  .projects-section {
+    height: 100vh
+  }
+
+  .exp-section {
+    height: 100vh
+  }
+  
+  .contact-section {
+    height: 100vh
+  }
+
+  .sprite {
+    position: absolute;
+    background-size: cover;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .sprite-1{
+    top: 10%;
+    left: 20%;
+  }

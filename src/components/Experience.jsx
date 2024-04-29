@@ -1,8 +1,9 @@
 //import React from 'react'
+import "../index.css";
 
 const Experience = () => {
     return (
-        <div>Experience</div>
+        <div className="exp-section border border-blue-600">Experience</div>
     )
 }
 

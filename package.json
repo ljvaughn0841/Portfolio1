@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@gsap/react": "^2.1.1",
+    "@react-spring/web": "^9.7.3",
     "@react-three/drei": "^9.92.5",
     "@react-three/fiber": "^8.15.12",
     "css": "^3.0.0",
     "framer-motion": "^10.16.16",
+    "gsap": "^3.12.5",
     "maath": "^0.10.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -17,11 +17,13 @@ Use goToAndPause to progress to the horizontal percentage in the frames
 */
 
 
+// TODO: use a map to load all the images in a div with a min width
+
+
 const IconSkills = () => {
     return (
-        <div className="flex flex-wrap gap-5 mb-10 border-orange-300 border justify-center">
-            <SpriteSheet
-                className=""
+        <div className="flex flex-wrap gap-5 mb-10 border-orange-300 border justify-center h-32">
+                <SpriteSheet
                 image={`src/assets/C_spritesheet.png`}
                 widthFrame={70}
                 heightFrame={50}
@@ -29,11 +31,11 @@ const IconSkills = () => {
                 fps={10}
                 autoplay={true}
                 loop={true}
-                isResponsive={false}
+                isResponsive={true}
                 />
 
+            <div className="border-red border min-w-32">
                 <SpriteSheet
-                className=""
                 image={`src/assets/PY_spritesheet.png`}
                 widthFrame={70}
                 heightFrame={50}
@@ -41,11 +43,11 @@ const IconSkills = () => {
                 fps={10}
                 autoplay={true}
                 loop={true}
-                isResponsive={false}
+                isResponsive={true}
                 />
+            </div>
 
                 <SpriteSheet
-                className=""
                 image={`src/assets/JS_spritesheet.png`}
                 widthFrame={70}
                 heightFrame={50}
@@ -53,11 +55,10 @@ const IconSkills = () => {
                 fps={10}
                 autoplay={true}
                 loop={true}
-                isResponsive={false}
+                isResponsive={true}
                 />
 
                 <SpriteSheet
-                className=""
                 image={`src/assets/HTML_spritesheet.png`}
                 widthFrame={70}
                 heightFrame={50}
@@ -65,11 +66,10 @@ const IconSkills = () => {
                 fps={10}
                 autoplay={true}
                 loop={true}
-                isResponsive={false}
+                isResponsive={true}
                 />
 
                 <SpriteSheet
-                className=""
                 image={`src/assets/CSS_spritesheet.png`}
                 widthFrame={70}
                 heightFrame={50}
@@ -77,7 +77,7 @@ const IconSkills = () => {
                 fps={10}
                 autoplay={true}
                 loop={true}
-                isResponsive={false}
+                isResponsive={true}
                 />
         </div>
         
