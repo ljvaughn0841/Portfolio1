@@ -193,7 +193,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .hero-section {
-    height: 150vh;
+    height: 100vh;
   }
 
   .skills-section {
@@ -221,5 +221,14 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .sprite-1{
-    width: 100%
+    width: 100%;
+  }
+
+  .parallax-remove-scrollbar {
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+
+  .parallax-remove-scrollbar::-webkit-scrollbar{
+    display: none;
   }
