@@ -22,7 +22,7 @@ Use goToAndPause to progress to the horizontal percentage in the frames
 
 const IconSkills = () => {
     return (
-        <div className="flex flex-wrap gap-5 mb-10 border-orange-300 border justify-center h-32">
+        <div className="flex flex-wrap gap-5 mb-10 border-orange-300 border justify-center min-h-fit">
                 <SpriteSheet
                 image={`src/assets/C_spritesheet.png`}
                 widthFrame={70}
