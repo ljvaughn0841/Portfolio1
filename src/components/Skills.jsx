@@ -16,7 +16,7 @@ const Skills = () => {
                 {mySkills.map((item) => (
                     <div className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem] border border-orange-700"
                     key={item.id}>
-                        <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none z-20">
+                        <div className="relative z-20 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
                             <h5 className="mb-5">{item.title}</h5>
                             <p className="mb-6">{item.text}</p>
                         </div>

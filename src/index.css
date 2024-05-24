@@ -22,64 +22,6 @@ body:has(.card[data-color="green"]:hover) {
   background-color: rgb(var(--green-rgb) / 25%);
 }
 
-@layer utilities {
-  .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
-  }
-
-  .head-text {
-    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
-  }
-
-  .subhead-text {
-    @apply font-semibold sm:text-3xl text-xl relative font-poppins;
-  }
-
-  .blue-gradient_text {
-    @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
-  }
-
-  .input {
-    @apply bg-white border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2.5 font-normal shadow-card;
-  }
-
-  .textarea {
-    @apply block p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-500 mt-2.5 font-normal shadow-card;
-  }
-
-  .btn {
-    @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
-  }
-
-  .header {
-    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
-  }
-
-  .footer {
-    @apply max-w-5xl mx-auto sm:px-16 pb-6 px-8 flex flex-col gap-7;
-  }
-
-  .footer-container {
-    @apply flex flex-wrap gap-7 items-center justify-between;
-  }
-
-  .info-box {
-    @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl neo-brutalism-blue pt-4 pb-12 px-8;
-  }
-
-  .neo-btn {
-    @apply py-3 px-6 rounded-lg text-blue-500 text-center font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3;
-  }
-
-  .cta {
-    @apply w-full flex items-center md:flex-row flex-col sm:mt-16 mt-8 gap-7;
-  }
-
-  .cta-text {
-    @apply text-black-500 font-extrabold flex-1 text-3xl max-md:text-center;
-  }
-}
-
 .glassmorphism {
   background: rgba(8, 116, 239, 0.07);
   backdrop-filter: blur(10px);
@@ -183,13 +125,6 @@ body:has(.card[data-color="green"]:hover) {
     0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
 }
 
-  .hero-section {
-    min-height: 200vh;
-    width: 100%;
-    position: static;
-    overflow: hidden;
-  }
-
   .skills-section {
     min-height: 100vh;
     width: 100%;
@@ -223,25 +158,49 @@ body:has(.card[data-color="green"]:hover) {
   image-rendering: crisp-edges;
   }
 
+    .hero-section {
+      height: 1600px;
+      width: 100%;
+    }
 
-  .sprite {
-    position: absolute;
-    background-size: cover;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-  }
+    .sprite {
+      background-size: cover;
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+    }
 
-  .sprite-1{
-    width: 100%;
-    bottom: -180%;
-  }
+    @media (max-width: 767px) {
+      .sprite-1{
+        position: absolute;
+        width: 770px;
+        top: 1600px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 3;
+      }
+    }
+    @media (min-width: 768px){
+      .sprite-1{
+      position: absolute;
+      width: 2000px;
+      top: 1600px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 3;
+    }
+    }
+    
 
-  .parallax-remove-scrollbar {
-    overflow-y: scroll;
-    scrollbar-width: none;
-  }
+    .sprite-2 {
+      position: absolute;
+      width: 2000px;
+      z-index: 1;
+    }
 
-  .parallax-remove-scrollbar::-webkit-scrollbar{
-    display: none;
-  }
+    .sprite-3 {
+      position: absolute;
+      width: 1200px;
+      top: 70px;
+      z-index: 2;
+    }
