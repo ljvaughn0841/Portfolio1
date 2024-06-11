@@ -23,6 +23,7 @@ Use goToAndPause to progress to the horizontal percentage in the frames
 const IconSkills = () => {
     return (
         <div className="flex flex-wrap gap-5 mb-10 border-orange-300 border justify-center min-h-fit">
+            <div className="border-red border min-w-32">
                 <SpriteSheet
                 image={`src/assets/C_spritesheet.png`}
                 widthFrame={70}
@@ -32,7 +33,14 @@ const IconSkills = () => {
                 autoplay={true}
                 loop={true}
                 isResponsive={true}
+                onLoopComplete={spritesheet => {
+                    if(spritesheet.getInfo('direction') == 'forward')
+                        spritesheet.setDirection('rewind')
+                    else
+                    spritesheet.setDirection('forward')
+                  }}
                 />
+            </div>
 
             <div className="border-red border min-w-32">
                 <SpriteSheet
@@ -44,9 +52,16 @@ const IconSkills = () => {
                 autoplay={true}
                 loop={true}
                 isResponsive={true}
+                onLoopComplete={spritesheet => {
+                    if(spritesheet.getInfo('direction') == 'forward')
+                        spritesheet.setDirection('rewind')
+                    else
+                    spritesheet.setDirection('forward')
+                  }}
                 />
             </div>
 
+            <div className="border-red border min-w-32">
                 <SpriteSheet
                 image={`src/assets/JS_spritesheet.png`}
                 widthFrame={70}
@@ -56,8 +71,16 @@ const IconSkills = () => {
                 autoplay={true}
                 loop={true}
                 isResponsive={true}
+                onLoopComplete={spritesheet => {
+                    if(spritesheet.getInfo('direction') == 'forward')
+                        spritesheet.setDirection('rewind')
+                    else
+                    spritesheet.setDirection('forward')
+                  }}
                 />
+                </div>
 
+                <div className="border-red border min-w-32">
                 <SpriteSheet
                 image={`src/assets/HTML_spritesheet.png`}
                 widthFrame={70}
@@ -67,8 +90,16 @@ const IconSkills = () => {
                 autoplay={true}
                 loop={true}
                 isResponsive={true}
+                onLoopComplete={spritesheet => {
+                    if(spritesheet.getInfo('direction') == 'forward')
+                        spritesheet.setDirection('rewind')
+                    else
+                    spritesheet.setDirection('forward')
+                  }}
                 />
+                </div>
 
+                <div className="border-red border min-w-32">
                 <SpriteSheet
                 image={`src/assets/CSS_spritesheet.png`}
                 widthFrame={70}
@@ -78,7 +109,14 @@ const IconSkills = () => {
                 autoplay={true}
                 loop={true}
                 isResponsive={true}
+                onLoopComplete={spritesheet => {
+                    if(spritesheet.getInfo('direction') == 'forward')
+                        spritesheet.setDirection('rewind')
+                    else
+                    spritesheet.setDirection('forward')
+                  }}
                 />
+                </div>
         </div>
         
         )
