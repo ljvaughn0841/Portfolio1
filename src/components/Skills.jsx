@@ -27,9 +27,16 @@ const Skills = () => {
                             heightFrame={50}
                             steps={10}
                             fps={10}
-                            autoplay={true}
-                            loop={true}
+                            autoplay={false}
+                            loop={false}
                             isResponsive={true}
+                            onMouseEnter={spritesheet => {
+                                spritesheet.play();
+                                console.log(spritesheet.frame)
+                              }}
+                            onMouseLeave={spritesheet =>{
+                                spritesheet.goToAndPause(1)
+                            }}
                             />
                         </div>
                     </div>
