@@ -44,7 +44,7 @@ const Hero = () => {
             else{
                 desktop.style.marginTop = -1486 +'px';
             }
-            back.style.marginTop = position * + 0.2 + 'px';
+            //back.style.marginTop = position * + 0.2 + 'px';
             
         }else{
             console.log(position)
@@ -73,7 +73,7 @@ const Hero = () => {
     
       return (
         <div className="hero-section border border-yellow-400 overflow-hidden relative">
-            <div className="sprite sprite-2 w-full" id='back'>
+            {/* <div className="sprite sprite-2 w-full" id='back'>
                 <SpriteSheet
                     image={`src/assets/spritesheet.png`}
                     widthFrame={70}
@@ -84,7 +84,7 @@ const Hero = () => {
                     loop={true}
                     isResponsive={true}
                 />
-            </div>
+            </div> */}
 
             <div className="sprite sprite-1 w-full" id='desktop'>
                     <SpriteSheet
