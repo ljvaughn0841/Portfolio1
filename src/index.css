@@ -207,7 +207,20 @@ body:has(.card[data-color="green"]:hover) {
 
     .sprite-3 {
       position: absolute;
-      width: 1200px;
-      top: 70px;
+      width: 400px;
+      top: 220px;
       z-index: 2;
+      margin-left: 150px;
     }
+
+    h5 {
+      font-size: 20px;
+    }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  .phone_reveal {
+    max-width: 400px;
+  }

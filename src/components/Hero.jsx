@@ -37,9 +37,11 @@ const Hero = () => {
         if (frameIndex < 15) {
             spritesheetInstance.goToAndPause(frameIndex)
             console.log("position is:", position)
-            if (frameIndex < 8){
-                desktop.style.marginTop = position * - 2 +'px'
-                me.style.marginTop = position * + 0.8 + 'px'
+            let desktop_pos = position * - 2.5
+            console.log(desktop_pos)
+            if (desktop_pos >= -1486){
+                desktop.style.marginTop = desktop_pos + 'px'
+                me.style.marginTop = position * + 0.55 + 'px'
             }
             else{
                 desktop.style.marginTop = -1486 +'px';
@@ -86,6 +88,10 @@ const Hero = () => {
                 />
             </div> */}
 
+            <div className='mt-40 ml-24 mr-24 justify-center'>
+                <img src = "src\assets\namecard.svg"></img>
+            </div>
+
             <div className="sprite sprite-1 w-full" id='desktop'>
                     <SpriteSheet
                         image={`src/assets/desktop_spritesheet.png`}
@@ -104,9 +110,9 @@ const Hero = () => {
 
             <div className='sprite sprite-3' id='me'>
             <SpriteSheet
-                        image={`src/assets/me_1_spritesheet.png`}
-                        widthFrame={200}
-                        heightFrame={150}
+                        image={`src/assets/me_2_spritesheet_79x126.png`}
+                        widthFrame={79}
+                        heightFrame={126}
                         steps={20}
                         fps={10}
                         autoplay={true}
