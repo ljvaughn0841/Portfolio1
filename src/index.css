@@ -221,6 +221,16 @@ body:has(.card[data-color="green"]:hover) {
     font-size: 50px;
   }
 
+
+  @media (min-width: 768px){
   .phone_reveal {
     max-width: 400px;
+    position: relative;
+  }}
+
+  @media (max-width: 767px) {
+    .phone_reveal {
+      max-width: 300px;
+      position: relative;
+    }
   }

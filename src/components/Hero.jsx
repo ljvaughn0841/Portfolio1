@@ -28,7 +28,7 @@ const Hero = () => {
 
         // !!! NOTE: NEED TO GET RID OF MOST WHITE SPACE IN THE IMAGES (so it doesnt interfere with anything)
         var frameIndex = Math.floor(position / (1600 / totalFrames) + 1);
-        console.log(frameIndex);
+        //console.log(frameIndex);
         let desktop = document.getElementById('desktop');
         let back = document.getElementById('back');
         let me = document.getElementById('me');
@@ -36,9 +36,9 @@ const Hero = () => {
         
         if (frameIndex < 15) {
             spritesheetInstance.goToAndPause(frameIndex)
-            console.log("position is:", position)
+            //console.log("position is:", position)
             let desktop_pos = position * - 2.5
-            console.log(desktop_pos)
+            //console.log(desktop_pos)
             if (desktop_pos >= -1486){
                 desktop.style.marginTop = desktop_pos + 'px'
                 me.style.marginTop = position * + 0.55 + 'px'
@@ -49,7 +49,7 @@ const Hero = () => {
             //back.style.marginTop = position * + 0.2 + 'px';
             
         }else{
-            console.log(position)
+            //console.log(position)
             desktop.style.marginTop = -1486 +'px';
             //back.style.marginTop = 15 * + 0.2 + 'px';
         }
