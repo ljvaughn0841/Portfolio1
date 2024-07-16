@@ -89,7 +89,7 @@ const Hero = () => {
             </div> */}
 
             <div className='mt-40 ml-24 mr-24 justify-center'>
-                <img src = "src\assets\namecard.svg"></img>
+                <img src = "src\assets\namecard.svg" className='mr-auto ml-auto'></img>
             </div>
 
             <div className="sprite sprite-1 w-full" id='desktop'>

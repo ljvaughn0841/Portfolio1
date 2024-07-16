@@ -50,15 +50,15 @@ const Projects = () => {
       // going to need a different format for mobile
     return (
         <div className="projects-section border border-x-teal-400">
-            <h1>Projects</h1>
+            <h1 className="text-center mb-10">Projects</h1>
 
-            <div className="featured_project_section w-full flex gap-10 overflow-hidden">
-              <div className="sm:block hidden">
+            <div className="featured_project_section w-full flex-nowrap flex-row justify-stretch overflow-hidden grid grid-flow-col">
+              <div className="sm:block hidden ml-10">
                 <p>Paragraph explaining some of the work that ive done.</p>
                 <p>More words explaining things</p>
                 <p>All very cool exciting things</p>
               </div>
-              <div className="">
+              <div className="featured_project_button mt-96 justify-self-end">
                 <p>Featured Project Button</p>
               </div>
               <div ref={myRef} className="phone_reveal">
