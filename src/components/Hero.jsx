@@ -32,6 +32,7 @@ const Hero = () => {
         let desktop = document.getElementById('desktop');
         let back = document.getElementById('back');
         let me = document.getElementById('me');
+        let cat = document.getElementById('cat');
         
         
         if (frameIndex < 15) {
@@ -42,6 +43,7 @@ const Hero = () => {
             if (desktop_pos >= -1486){
                 desktop.style.marginTop = desktop_pos + 'px'
                 me.style.marginTop = position * + 0.55 + 'px'
+                cat.style.marginTop = 420 + + position * + 0.55 + 'px'
             }
             else{
                 desktop.style.marginTop = -1486 +'px';
@@ -108,12 +110,24 @@ const Hero = () => {
                     />
                 </div>
 
-            <div className='sprite sprite-3' id='me'>
+            <div className='sprite sprite-me' id='me'>
             <SpriteSheet
                         image={`src/assets/me_2_spritesheet_79x126.png`}
                         widthFrame={79}
                         heightFrame={126}
                         steps={20}
+                        fps={10}
+                        autoplay={true}
+                        loop={true}
+                        isResponsive={true}
+                    />
+            </div>
+            <div className='sprite sprite-cat max-w-96 max-h-96' id='cat'>
+            <SpriteSheet
+                        image={`src/assets/cat_spritesheet.png`}
+                        widthFrame={45}
+                        heightFrame={45}
+                        steps={10}
                         fps={10}
                         autoplay={true}
                         loop={true}
