@@ -3,6 +3,7 @@ import "../index.css";
 import SpriteSheet from "react-responsive-spritesheet";
 import { useRef, useEffect } from 'react';
 import { root } from "postcss";
+import MultiFilters from "./MultiFilters"
 
 const Projects = () => {
 
@@ -49,11 +50,11 @@ const Projects = () => {
 
       // going to need a different format for mobile
     return (
-        <div className="projects-section border border-x-teal-400">
+        <div className="projects-section border border-x-teal-400 sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0">
             <h1 className="text-center mb-10">Projects</h1>
 
             <div className="featured_project_section w-full flex-nowrap flex-row justify-stretch overflow-hidden grid grid-flow-col">
-              <div className="sm:block hidden ml-10">
+              <div className="sm:block hidden">
                 <p>Paragraph explaining some of the work that ive done.</p>
                 <p>More words explaining things</p>
                 <p>All very cool exciting things</p>
@@ -79,6 +80,9 @@ const Projects = () => {
               />
               </div>
             </div>
+
+            <MultiFilters></MultiFilters>
+
         </div>
         )
 }

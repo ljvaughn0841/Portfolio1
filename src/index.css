@@ -140,6 +140,7 @@ body:has(.card[data-color="green"]:hover) {
     min-height: 100vh;
     width: 100%;
     position: static;
+    padding: "sm:px-16 px-6 sm:py-16 py-10",
   }
 
   .exp-section {
@@ -168,6 +169,7 @@ body:has(.card[data-color="green"]:hover) {
       image-rendering: pixelated;
       image-rendering: -moz-crisp-edges;
       image-rendering: crisp-edges;
+      background-image: linear-gradient(#151030, #050816)
     }
 
     .sprite {
@@ -239,4 +241,29 @@ body:has(.card[data-color="green"]:hover) {
       max-width: 300px;
       position: relative;
     }
+  }
+
+  /* Projects Section */
+  .buttons_container {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+  .button {
+    border: 1px solid #000;
+    background: transparent;
+    margin: 5px 5px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .button:hover {
+    box-shadow: 3px 3px 0px 0px rgba(0, 0, 0);
+  }
+
+  .active {
+    background-color: #11d3f3;
+    color: #000000;
   }

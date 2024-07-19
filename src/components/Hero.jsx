@@ -92,6 +92,7 @@ const Hero = () => {
 
             <div className='mt-40 ml-24 mr-24 justify-center'>
                 <img src = "src\assets\namecard.svg" className='mr-auto ml-auto'></img>
+                <h1 className='mr-auto ml-auto text-center'>I DESIGN AND DEVELOP ______</h1>
             </div>
 
             <div className="sprite sprite-1 w-full" id='desktop'>
