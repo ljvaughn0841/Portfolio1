@@ -54,8 +54,9 @@ export default function MultiFilters() {
         <div className="projects_container flex flex-wrap gap-7">
         {filteredItems.map((item, idx) => (
           <div key={`items-${idx}`} className="item bg-tertiary p-5 rounded-2xl sm:max-w-[360px] w-full mb-5">
+            <img src={item.image}></img>
             <p>{item.name}</p>
-            {/* <p className="category">{item.category}</p> */}
+            <p className="category">{item.category}</p>
           </div>
         ))}
       </div>

@@ -129,7 +129,7 @@ const Hero = () => {
                         widthFrame={45}
                         heightFrame={45}
                         steps={10}
-                        fps={10}
+                        fps={7}
                         autoplay={true}
                         loop={true}
                         isResponsive={true}
