@@ -218,7 +218,14 @@ body:has(.card[data-color="green"]:hover) {
     .sprite-cat {
       z-index: 2;
       margin-left: 50%;
-      margin-top: 420px;
+      margin-top: 750px;
+    }
+
+    .sprite-painting {
+      height: 300px;
+      width: 200;
+      top: 240px;
+      right: 400px
     }
 
     h5 {
@@ -229,6 +236,29 @@ body:has(.card[data-color="green"]:hover) {
     font-size: 50px;
   }
 
+  .micro-5-regular {
+    font-family: "Micro 5", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .tiny5-regular {
+    font-family: "Tiny5", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .silkscreen-regular {
+    font-family: "Silkscreen", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .silkscreen-bold {
+    font-family: "Silkscreen", serif;
+    font-weight: 700;
+    font-style: normal;
+  }  
 
   @media (min-width: 768px){
   .phone_reveal {

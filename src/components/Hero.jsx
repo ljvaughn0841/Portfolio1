@@ -32,7 +32,7 @@ const Hero = () => {
         let desktop = document.getElementById('desktop');
         let back = document.getElementById('back');
         let me = document.getElementById('me');
-        let cat = document.getElementById('cat');
+        //let cat = document.getElementById('cat');
         
         
         if (frameIndex < 15) {
@@ -43,7 +43,7 @@ const Hero = () => {
             if (desktop_pos >= -1486){
                 desktop.style.marginTop = desktop_pos + 'px'
                 me.style.marginTop = position * + 0.55 + 'px'
-                cat.style.marginTop = 420 + + position * + 0.55 + 'px'
+                //cat.style.marginTop = 420 + + position * + 0.55 + 'px'
             }
             else{
                 desktop.style.marginTop = -1486 +'px';
@@ -90,9 +90,17 @@ const Hero = () => {
                 />
             </div> */}
 
-            <div className='mt-40 ml-24 mr-24 justify-center'>
-                <img src = "src\assets\namecard.svg" className='mr-auto ml-auto'></img>
-                <h1 className='mr-auto ml-auto text-center'>I DESIGN AND DEVELOP ______</h1>
+            <div className='mt-20 ml-24 mr-24 justify-center'>
+                <h1 className='mr-auto ml-auto text-center silkscreen-regular text-9xl'>Lou Vaughn</h1>
+                <h1 className='mr-auto ml-auto text-center tiny5-regular'>I DESIGN AND DEVELOP ______</h1>
+            </div>
+
+            <div className='sprite relative'>
+                <img src = "src\assets\LighthousePainting.png" className='w-48 absolute right-[55%] top-[40px]'></img>
+            </div>
+
+            <div className='sprite relative'>
+                <img src = "src\assets\BGLayoutTest.png" className='w-[800px] absolute right-[10%] top-[-90px]'></img>
             </div>
 
             <div className="sprite sprite-1 w-full" id='desktop'>
@@ -113,10 +121,10 @@ const Hero = () => {
 
             <div className='sprite sprite-me' id='me'>
             <SpriteSheet
-                        image={`src/assets/me_2_spritesheet_79x126.png`}
-                        widthFrame={79}
-                        heightFrame={126}
-                        steps={20}
+                        image={`src/assets/me_2_spritesheet_83x127-Sheet.png`}
+                        widthFrame={83}
+                        heightFrame={127}
+                        steps={15}
                         fps={10}
                         autoplay={true}
                         loop={true}
