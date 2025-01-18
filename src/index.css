@@ -297,3 +297,158 @@ body:has(.card[data-color="green"]:hover) {
     background-color: #11d3f3;
     color: #000000;
   }
+
+
+  /* Experience Section */
+
+    /* Timeline */
+    /* NOTE: overflow hidden hides line extension from top 30px extension */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+    overflow: hidden;
+  }
+  
+  /* The Line */
+  
+  .timeline::after{
+    content:'';
+    position:absolute;
+    width:6px;
+    height: 100%;
+    background: #fff;
+    top: 30px;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 0;
+    animation: moveline 2s linear forwards;
+  }
+
+  @keyframes moveline{
+    0%{
+      height: 0;
+    }
+    100%{
+      height: 100%;
+    }
+  }
+
+  .timeline-container {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    z-index: 1;
+    animation: movedown 0.8s forwards ease-out;
+    opacity: 0;
+  }
+  @keyframes movedown{
+    0%{
+      opacity:1;
+      transform: translateY(-20px);
+    }
+    100%{
+      opacity:100%;
+      transform: translateY(0px);
+    }
+  }
+  /* NOTE: After adding more jobs you will need to add to animation here.*/
+  .timeline-container:nth-child(1){
+    animation-delay: 0s;
+  }
+
+  .timeline-container:nth-child(2){
+    animation-delay: 1s;
+  }
+
+  
+
+  .timeline-container img{
+    position:absolute;
+    right: -100px;
+    top:-40px;
+  }
+
+  .timeline-left {
+    left: 0;
+  }
+
+  .timeline-right {
+    left: 50%;
+  }
+
+  .timeline-right img{
+    left: -100px;
+  }
+
+  /* Timeline Container Arrows */
+  .timeline-left-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 45px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid white;
+    right: 35px;
+  }
+  .timeline-right-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 45px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid white;
+    left: 35px;
+  }
+
+  /* Timeline Text & Contents */
+  .text-box {
+    padding: 20px 30px;
+    background: #fff;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+    color:#000;
+  }
+
+  .text-box small{
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+
+  /* Timeline Mobile Settings */
+
+  @media screen and (max-width:767px){
+    .timeline{
+      margin:50px auto
+    }
+    .timeline::after{
+      left: 31px;
+    }
+    .timeline-container{
+      width: 100%;
+      padding-left: 80px;
+      padding-right: 25px;
+    }
+
+    .timeline-left img, .timeline-right img{
+      left: -70px;
+      z-index: 10;
+    }
+
+    .timeline-right{
+      left: 0;
+    }
+    .timeline-right-arrow, .timeline-left-arrow{
+      border-right: 15px solid white;
+      border-left: 0;
+      left: 65px;
+      z-index: 45;
+
+    }
+  }
