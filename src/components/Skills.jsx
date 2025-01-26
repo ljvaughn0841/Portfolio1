@@ -12,7 +12,7 @@ import "../index.css";
 const Skills = () => {
     return (
         <div className="skills-section mt-10 border border-green-500 overflow-x-hidden sm:px-0 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0">
-            <h1 className='text-center mb-10'>My Skills</h1>
+            <h1 className='text-center mb-10 silkscreen-bold'>My Skills</h1>
             <div className="flex flex-wrap gap-10 mb-10 justify-center">
                 {mySkills.map((item) => (
                     <div className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] max-w-[24rem] border border-orange-700"

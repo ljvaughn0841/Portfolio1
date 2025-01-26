@@ -149,11 +149,57 @@ body:has(.card[data-color="green"]:hover) {
     position: static;
   }
   
+
+
+/* CONTACT SECTION STUFF */
+
   .contact-section {
-    min-height: 100vh;
+    min-height: 46vh; /* 92vh; (8vh is for the nav menu) */
     width: 100%;
     position: static;
   }
+
+  @media (max-width: 767px) {
+    .contact-section {
+      min-height: 50vh; /* 100vh; */
+      width: 100%;
+      position: static;
+    }
+  }
+
+/* General button styling */
+.pixel-button {
+  display: inline-block;
+  width: 32px; /* Width of a single frame in the spritesheet */
+  height: 32px; /* Height of a single frame in the spritesheet */
+  background-repeat: no-repeat;
+  background-position: 0 0; /* Default position (normal state) */
+  cursor: pointer;
+  transition: transform 0.2s;
+  scale: 2;
+}
+
+/* Overwrites pixel button with button image classes */
+.linkedin-button.pixel-button {
+  background-image: url('src/assets/linkedin_button.png');
+}
+
+.github-button.pixel-button{
+  background-image: url('src/assets/github_button.png');
+}
+
+/* Hover state */
+.pixel-button:hover {
+  background-position: -32px; /* Shift to the second frame in the spritesheet */
+  transform: scale(1.1); /* Slight zoom effect for hover */
+}
+
+/* Active (clicked) state */
+.pixel-button:active {
+  background-position: -32px; /* Shift to the second frame in the spritesheet */
+  transform: scale(0.95); /* Slight shrink effect for active */
+}
+
 
 /* Sprite Sheet Animation Stuff */
 
@@ -163,292 +209,302 @@ body:has(.card[data-color="green"]:hover) {
   image-rendering: crisp-edges;
   }
 
-    .hero-section {
-      height: 1600px;
-      width: 100%;
-      image-rendering: pixelated;
-      image-rendering: -moz-crisp-edges;
-      image-rendering: crisp-edges;
-      background-image: linear-gradient(#151030, #050816)
-    }
+.hero-section {
+  height: 1600px;
+  width: 100%;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  background-image: linear-gradient(#151030, #050816)
+}
 
-    .sprite {
-      background-size: cover;
-      image-rendering: pixelated;
-      image-rendering: -moz-crisp-edges;
-      image-rendering: crisp-edges;
-    }
+.sprite {
+  background-size: cover;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
 
-    @media (max-width: 767px) {
-      .sprite-1{
-        position: absolute;
-        width: 770px;
-        top: 1600px;
-        left: 50%;
-        transform: translate(-50%, 0);
-        z-index: 3;
-      }
-    }
-    @media (min-width: 768px){
-      .sprite-1{
-      position: absolute;
-      width: 2000px;
-      top: 1600px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      z-index: 3;
-    }
-    }
-    
-
-    .sprite-2 {
-      position: absolute;
-      width: 2000px;
-      z-index: 1;
-    }
-
-    .sprite-me {
-      position: absolute;
-      width: 400px;
-      top: 220px;
-      z-index: 2;
-      margin-left: 150px;
-    }
-
-    .sprite-cat {
-      z-index: 2;
-      margin-left: 50%;
-      margin-top: 750px;
-    }
-
-    .sprite-painting {
-      height: 300px;
-      width: 200;
-      top: 240px;
-      right: 400px
-    }
-
-    h5 {
-      font-size: 20px;
-    }
-
-  h1 {
-    font-size: 50px;
-  }
-
-  .micro-5-regular {
-    font-family: "Micro 5", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .tiny5-regular {
-    font-family: "Tiny5", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .silkscreen-regular {
-    font-family: "Silkscreen", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .silkscreen-bold {
-    font-family: "Silkscreen", serif;
-    font-weight: 700;
-    font-style: normal;
-  }  
-
-  @media (min-width: 768px){
-  .phone_reveal {
-    max-width: 400px;
-    position: relative;
-  }}
-
-  @media (max-width: 767px) {
-    .phone_reveal {
-      max-width: 300px;
-      position: relative;
-    }
-  }
-
-  /* Projects Section */
-  .buttons_container {
-    display: flex;
-    margin-top: 20px;
-    margin-left: 30px;
-  }
-  .button {
-    border: 1px solid #000;
-    background: transparent;
-    margin: 5px 5px;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .button:hover {
-    box-shadow: 3px 3px 0px 0px rgba(0, 0, 0);
-  }
-
-  .active {
-    background-color: #11d3f3;
-    color: #000000;
-  }
-
-
-  /* Experience Section */
-
-    /* Timeline */
-    /* NOTE: overflow hidden hides line extension from top 30px extension */
-  .timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 100px auto;
-    overflow: hidden;
-  }
-  
-  /* The Line */
-  
-  .timeline::after{
-    content:'';
-    position:absolute;
-    width:6px;
-    height: 100%;
-    background: #fff;
-    top: 30px;
+@media (max-width: 767px) {
+  .sprite-1{
+    position: absolute;
+    width: 770px;
+    top: 1600px;
     left: 50%;
-    margin-left: -3px;
-    z-index: 0;
-    animation: moveline 2s linear forwards;
+    transform: translate(-50%, 0);
+    z-index: 3;
   }
-
-  @keyframes moveline{
-    0%{
-      height: 0;
-    }
-    100%{
-      height: 100%;
-    }
-  }
-
-  .timeline-container {
-    padding: 10px 50px;
-    position: relative;
-    width: 50%;
-    z-index: 1;
-    animation: movedown 0.8s forwards ease-out;
-    opacity: 0;
-  }
-  @keyframes movedown{
-    0%{
-      opacity:1;
-      transform: translateY(-20px);
-    }
-    100%{
-      opacity:100%;
-      transform: translateY(0px);
-    }
-  }
-  /* NOTE: After adding more jobs you will need to add to animation here.*/
-  .timeline-container:nth-child(1){
-    animation-delay: 0s;
-  }
-
-  .timeline-container:nth-child(2){
-    animation-delay: 1s;
-  }
-
+}
+@media (min-width: 768px){
+  .sprite-1{
+  position: absolute;
+  width: 2000px;
+  top: 1600px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 3;
+}
+}
   
 
-  .timeline-container img{
-    position:absolute;
-    right: -100px;
-    top:-40px;
+.sprite-2 {
+  position: absolute;
+  width: 2000px;
+  z-index: 1;
+}
+
+.sprite-me {
+  position: absolute;
+  width: 400px;
+  top: 220px;
+  z-index: 2;
+  margin-left: 150px;
+}
+
+.sprite-cat {
+  z-index: 2;
+  margin-left: 50%;
+  margin-top: 750px;
+}
+
+.sprite-painting {
+  height: 300px;
+  width: 200;
+  top: 240px;
+  right: 400px
+}
+
+
+
+
+
+/* Text And Font Styles */
+
+h5 {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.micro-5-regular {
+  font-family: "Micro 5", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tiny5-regular {
+  font-family: "Tiny5", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-regular {
+  font-family: "Silkscreen", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-bold {
+  font-family: "Silkscreen", serif;
+  font-weight: 700;
+  font-style: normal;
+}  
+
+
+
+
+/* Projects Section */
+
+@media (min-width: 768px){
+.phone_reveal {
+  max-width: 400px;
+  position: relative;
+}}
+
+@media (max-width: 767px) {
+  .phone_reveal {
+    max-width: 300px;
+    position: relative;
+  }
+}
+
+.buttons_container {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.button {
+  border: 1px solid #000;
+  background: transparent;
+  margin: 5px 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0);
+}
+
+.active {
+  background-color: #11d3f3;
+  color: #000000;
+}
+
+
+/* Experience Section */
+
+  /* Timeline */
+  /* NOTE: overflow hidden hides line extension from top 30px extension */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 100px auto;
+  overflow: hidden;
+}
+
+/* The Line */
+
+.timeline::after{
+  content:'';
+  position:absolute;
+  width:6px;
+  height: 100%;
+  background: #fff;
+  top: 30px;
+  left: 50%;
+  margin-left: -3px;
+  z-index: 0;
+  animation: moveline 2s linear forwards;
+}
+
+@keyframes moveline{
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 100%;
+  }
+}
+
+.timeline-container {
+  padding: 10px 50px;
+  position: relative;
+  width: 50%;
+  z-index: 1;
+  animation: movedown 0.8s forwards ease-out;
+  opacity: 0;
+}
+@keyframes movedown{
+  0%{
+    opacity:1;
+    transform: translateY(-20px);
+  }
+  100%{
+    opacity:100%;
+    transform: translateY(0px);
+  }
+}
+/* NOTE: After adding more jobs you will need to add to animation here.*/
+.timeline-container:nth-child(1){
+  animation-delay: 0s;
+}
+
+.timeline-container:nth-child(2){
+  animation-delay: 1s;
+}
+
+
+
+.timeline-container img{
+  position:absolute;
+  right: -100px;
+  top:-40px;
+}
+
+.timeline-left {
+  left: 0;
+}
+
+.timeline-right {
+  left: 50%;
+}
+
+.timeline-right img{
+  left: -100px;
+}
+
+/* Timeline Container Arrows */
+.timeline-left-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 45px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid white;
+  right: 35px;
+}
+.timeline-right-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 45px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid white;
+  left: 35px;
+}
+
+/* Timeline Text & Contents */
+.text-box {
+  padding: 20px 30px;
+  background: #fff;
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+  color:#000;
+}
+
+.text-box small{
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+
+/* Timeline Mobile Settings */
+
+@media screen and (max-width:767px){
+  .timeline{
+    margin:50px auto
+  }
+  .timeline::after{
+    left: 31px;
+  }
+  .timeline-container{
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
   }
 
-  .timeline-left {
+  .timeline-left img, .timeline-right img{
+    left: -70px;
+    z-index: 10;
+  }
+
+  .timeline-right{
     left: 0;
   }
-
-  .timeline-right {
-    left: 50%;
-  }
-
-  .timeline-right img{
-    left: -100px;
-  }
-
-  /* Timeline Container Arrows */
-  .timeline-left-arrow {
-    height: 0;
-    width: 0;
-    position: absolute;
-    top: 45px;
-    z-index: 1;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 15px solid white;
-    right: 35px;
-  }
-  .timeline-right-arrow {
-    height: 0;
-    width: 0;
-    position: absolute;
-    top: 45px;
-    z-index: 1;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
+  .timeline-right-arrow, .timeline-left-arrow{
     border-right: 15px solid white;
-    left: 35px;
+    border-left: 0;
+    left: 65px;
+    z-index: 45;
+
   }
-
-  /* Timeline Text & Contents */
-  .text-box {
-    padding: 20px 30px;
-    background: #fff;
-    position: relative;
-    border-radius: 6px;
-    font-size: 15px;
-    color:#000;
-  }
-
-  .text-box small{
-    display: inline-block;
-    margin-bottom: 15px;
-  }
-
-
-  /* Timeline Mobile Settings */
-
-  @media screen and (max-width:767px){
-    .timeline{
-      margin:50px auto
-    }
-    .timeline::after{
-      left: 31px;
-    }
-    .timeline-container{
-      width: 100%;
-      padding-left: 80px;
-      padding-right: 25px;
-    }
-
-    .timeline-left img, .timeline-right img{
-      left: -70px;
-      z-index: 10;
-    }
-
-    .timeline-right{
-      left: 0;
-    }
-    .timeline-right-arrow, .timeline-left-arrow{
-      border-right: 15px solid white;
-      border-left: 0;
-      left: 65px;
-      z-index: 45;
-
-    }
-  }
+}
