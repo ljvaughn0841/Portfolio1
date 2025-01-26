@@ -20,20 +20,18 @@ const Hero = () => {
         // The animations will also need to be responsive using media queries in JS too
 
         // TODO:
-        // * Create background asset
-        // * Create cat asset
-        // * Create foreground covering asset (optional)
-        // * Get rid of whitespace in the sprites/images to make them easier to workwith
+        // * Horizontal movement with mouse (optional)
         
 
         // !!! NOTE: NEED TO GET RID OF MOST WHITE SPACE IN THE IMAGES (so it doesnt interfere with anything)
         var frameIndex = Math.floor(position / (1600 / totalFrames) + 1);
         //console.log(frameIndex);
         let desktop = document.getElementById('desktop');
-        let back = document.getElementById('back');
+        // let back = document.getElementById('back');
         let me = document.getElementById('me');
         //let cat = document.getElementById('cat');
-        
+        let decor = document.getElementById('decor');
+        let painting = document.getElementById('paint');
         
         if (frameIndex < 15) {
             spritesheetInstance.goToAndPause(frameIndex)
@@ -43,6 +41,8 @@ const Hero = () => {
             if (desktop_pos >= -1486){
                 desktop.style.marginTop = desktop_pos + 'px'
                 me.style.marginTop = position * + 0.55 + 'px'
+                decor.style.marginTop = position * + 0.3 + 'px'
+                painting.style.marginTop = position * + 0.19 + 'px'
                 //cat.style.marginTop = 420 + + position * + 0.55 + 'px'
             }
             else{
@@ -92,14 +92,14 @@ const Hero = () => {
 
             <div className='mt-20 ml-24 mr-24 justify-center'>
                 <h1 className='mr-auto ml-auto text-center silkscreen-regular text-9xl'>Lou Vaughn</h1>
-                <h1 className='mr-auto ml-auto text-center tiny5-regular'>I DESIGN AND DEVELOP ______</h1>
+                <h1 className='mr-auto ml-auto text-center tiny5-regular'>Developer / Data Scientist</h1>
             </div>
 
-            <div className='sprite relative'>
+            <div className='sprite relative' id='paint'>
                 <img src = "src\assets\LighthousePainting.png" className='w-48 absolute right-[55%] top-[40px]'></img>
             </div>
 
-            <div className='sprite relative'>
+            <div className='sprite relative' id='decor'>
                 <img src = "src\assets\BGLayoutTest.png" className='w-[800px] absolute right-[10%] top-[-90px]'></img>
             </div>
 

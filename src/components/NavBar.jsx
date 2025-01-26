@@ -12,14 +12,14 @@ const NavBar = () => {
 
         <div className='w-full flex justify-center items-center max-w-7xl mx-auto content-center border border-red-800'>
             {/* Desktop NavBar */}
-            <ul className="list-none hidden sm:flex flex-row gap-10">
+            <ul className="list-none hidden sm:flex flex-row gap-10 tiny5-regular">
                 {navLinks.map((Link) => (
                     <li key={Link}
                     className={`${
                         active === Link.title
                         ? "text-white"
                         : "text-secondary"
-                    } hover:text-white text-[18px] font-medium cursor-pointer
+                    } hover:text-white text-[20px] font-medium cursor-pointer
                     `}
                     onClick={() => setActive(Link.title)}
                     >
