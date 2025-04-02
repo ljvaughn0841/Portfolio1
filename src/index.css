@@ -368,17 +368,21 @@ h1 {
 
 /* The Line */
 
-.timeline::after{
-  content:'';
-  position:absolute;
-  width:6px;
-  height: 100%;
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 0; /* Start with height 0 */
   background: #fff;
   top: 30px;
   left: 50%;
   margin-left: -3px;
   z-index: 0;
-  animation: moveline 2s linear forwards;
+  transition: height 2s linear; /* Smooth transition */
+}
+
+.timeline.animate-line::after {
+  height: 100%; /* Full height when the class is added */
 }
 
 @keyframes moveline{
@@ -395,9 +399,17 @@ h1 {
   position: relative;
   width: 50%;
   z-index: 1;
-  animation: movedown 0.8s forwards ease-out;
-  opacity: 0;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start position for animation */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
+
+.timeline-container.animate {
+  opacity: 1; /* Make visible */
+  transform: translateY(0); /* Move to final position */
+}
+
+
 @keyframes movedown{
   0%{
     opacity:1;

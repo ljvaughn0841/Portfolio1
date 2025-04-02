@@ -64,7 +64,7 @@ const Hero = () => {
             window.removeEventListener("wheel", scrollCallback);
             window.removeEventListener('scroll', scrollCallback);
         };
-      }, []);
+      },);
 
       // Having a hard time making the scrolling feel responsive
       // Started trying parrallax with the scrollCallback but its not responsive. Some solutions are:
