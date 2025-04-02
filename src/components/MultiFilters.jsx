@@ -37,8 +37,8 @@ export default function MultiFilters() {
       };
 
     return (
-    <div>
-        <div className="buttons_container">
+    <div className="bg-black-100 rounded-xl relative z-0">
+        <div className="buttons_container pt-2 pb-2">
             {filters.map((category, index) =>(
                 <button
                 onClick={() => handleFilterButtonClick(category)}
@@ -51,7 +51,7 @@ export default function MultiFilters() {
             ) )}
         </div>
 
-        <div className="projects_container flex flex-wrap gap-7">
+        <div className="projects_container flex flex-wrap gap-7 justify-center">
         {filteredItems.map((item, idx) => (
           <div key={`items-${idx}`} className="item bg-tertiary p-5 rounded-2xl sm:max-w-[360px] w-full mb-5">
             <img src={item.image}></img>

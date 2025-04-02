@@ -337,7 +337,7 @@ h1 {
 }
 .button {
   border: 1px solid #000;
-  background: transparent;
+  background: #151030;
   margin: 5px 5px;
   border-radius: 5px;
   padding: 5px 10px;
@@ -350,7 +350,7 @@ h1 {
 }
 
 .active {
-  background-color: #11d3f3;
+  background-color: #6f6994;
   color: #000000;
 }
 
