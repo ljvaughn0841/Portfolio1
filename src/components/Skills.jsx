@@ -9,6 +9,7 @@ import "../index.css";
 //  TODO ITEMS HERE
 //      1. Make sprite sheet image without empty space on sides
 //      2. Make div always a multiple of the sprite sheet to scale well
+//      3. It might be nice to have different sprites for each skill, and heights symbolic of rank.
 const Skills = () => {
     return (
         <div className="skills-section mt-10 border border-green-500 overflow-x-hidden sm:px-0 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0">
@@ -19,7 +20,7 @@ const Skills = () => {
                     key={item.id}>
                         <div className="relative z-20 flex flex-col min-h-[22rem] p-[3rem] pointer-events-none">
                             <div className='flex mb-5 align-middle'>
-                                <img src= "src\assets\laptop.JPG" className='w-24 h-24'></img>
+                                <img src= {item.icon} className='w-24 h-24 sprite'></img>
                                 <h5 className="ml-3 text-[32px] tiny5-regular">{item.title}</h5>
                             </div>
                             <p className="mb-6 text-[20px] tiny5-regular">{item.text}</p>

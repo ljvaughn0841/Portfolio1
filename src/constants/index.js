@@ -53,19 +53,19 @@
     id: "software",
     title: "Software Development",
     text: "Skilled in software development primarily utilizing: Python, C++, Java, JavaScript.",
-    icon: null
+    icon: "src/assets/Coding.png"
   },
   {
-    id: "graphic",
-    title: "Graphical Design",
-    text: "Certified in the Adobe Suite including Photoshop, Illustrator, Premiere, and More!",
-    icon: null
+    id: "data",
+    title: "Data Science",
+    text: "Experienced in data science and analytics using Python, R, and SQL.",
+    icon: "src/assets/DataSci.png"
   },
   {
     id: "web",
     title: "Web Development",
     text: "Experienced in developing websites in HTML, CSS, JS, Tailwind. As well as utilizing no/low code solutions like Wordpress, Wix, and Shopify.",
-    icon: null
+    icon: "src/assets/Web.png"
   }
   ];
 
