@@ -38,7 +38,7 @@ export default function MultiFilters() {
 
     return (
     <div className="bg-black-100 rounded-xl relative z-0">
-        <div className="buttons_container pt-2 pb-2">
+        <div className="buttons_container pt-2 pb-2 silkscreen-regular">
             {filters.map((category, index) =>(
                 <button
                 onClick={() => handleFilterButtonClick(category)}
@@ -55,8 +55,8 @@ export default function MultiFilters() {
         {filteredItems.map((item, idx) => (
           <div key={`items-${idx}`} className="item bg-tertiary p-5 rounded-2xl sm:max-w-[360px] w-full mb-5">
             <img src={item.image}></img>
-            <p>{item.name}</p>
-            <p className="category">{item.category}</p>
+            <p className = "silkscreen-regular">{item.name}</p>
+            <p className="category tiny5-regular">{item.category}</p>
           </div>
         ))}
       </div>

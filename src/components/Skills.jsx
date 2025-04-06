@@ -19,12 +19,12 @@ const Skills = () => {
                     key={item.id}>
                         <div className="relative z-20 flex flex-col min-h-[22rem] p-[3rem] pointer-events-none">
                             <div className='flex mb-5 align-middle'>
-                                <img src= "src\assets\laptop.JPG" className='w-16 h-16'></img>
-                                <h5 className="ml-5">{item.title}</h5>
+                                <img src= "src\assets\laptop.JPG" className='w-24 h-24'></img>
+                                <h5 className="ml-3 text-[32px] tiny5-regular">{item.title}</h5>
                             </div>
-                            <p className="mb-6">{item.text}</p>
+                            <p className="mb-6 text-[20px] tiny5-regular">{item.text}</p>
                         </div>
-                        <div className="absolute top-0 left-0 w-full h-full z-10 scale-110">
+                        <div className="absolute top-0 left-0 w-full h-full scale-110">
                         <SpriteSheet
                             image={`src/assets/spritesheet.png`}
                             widthFrame={50}

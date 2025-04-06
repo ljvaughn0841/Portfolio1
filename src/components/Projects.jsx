@@ -54,12 +54,14 @@ const Projects = () => {
             <h1 className="text-center mb-10 silkscreen-bold">Projects</h1>
 
             <div className="featured_project_section w-full flex-nowrap flex-row justify-stretch overflow-hidden grid grid-flow-col">
-              <div className="sm:block hidden">
-                <p>Paragraph explaining some of the work that ive done.</p>
-                <p>More words explaining things</p>
-                <p>All very cool exciting things</p>
+              <div className="xl:block hidden">
+                <p className="micro-5-regular text-[45px] line-spacing-1.5 leading-none">
+                  Here are some of the awesome projects I&#39;ve worked on!
+                  <br />
+                  From coding apps to digging into data, these projects showcase how I tackle problems and create cool solutions.
+                </p>
               </div>
-              <div className="featured_project_button mt-96 justify-self-end">
+              <div className="featured_project_button mt-96 justify-self-end silkscreen-regular">
                 <p>Featured Project Button</p>
               </div>
               <div ref={myRef} className="phone_reveal">
