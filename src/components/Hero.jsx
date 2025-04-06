@@ -76,7 +76,7 @@ const Hero = () => {
       // the mobile than for desktop
     
       return (
-        <div className="hero-section border border-yellow-400 overflow-hidden relative">
+        <div className="hero-section border border-yellow-400 overflow-hidden relative" id="Home">
             {/* <div className="sprite sprite-2 w-full" id='back'>
                 <SpriteSheet
                     image={`src/assets/spritesheet.png`}
