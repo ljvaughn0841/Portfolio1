@@ -355,6 +355,44 @@ h1 {
 }
 
 
+/* Overlay Styles */
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content at the top */
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100% - 80px; /* Full height minus the nav bar */
+  z-index: 40;
+  padding-top: 80px; /* Push content below the nav bar */
+}
+
+.overlay-content {
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+}
+
+.overlay-content button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
 /* Experience Section */
 
   /* Timeline */
