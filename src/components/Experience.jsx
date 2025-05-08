@@ -41,7 +41,7 @@ const Experience = () => {
     
     return (
         <div className="exp-section border border-blue-600 sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0" id="Experience">
-            <h1 className="text-center mb-10 silkscreen-bold">Experience</h1>
+            <h1 className="text-center mb-10 silkscreen-bold text-3xl sm:text-5xl lg:text-6xl leading-tight break-words">Experience</h1>
             <div className="mt-20 timeline">
                 <div className="timeline-container timeline-left">
                 <img src ="src\assets\ljv_logo.png" className="rounded-full scale-[30%] sprite"></img>

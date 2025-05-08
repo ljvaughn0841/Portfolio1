@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
-import {projects} from "../constants"
-import "../index.css"
+import { projects } from "../constants";
+import "../index.css";
+import PropTypes from "prop-types";
 
 // The project section filters were built upon the basic multifilter from xplodivity
 // See here: https://www.youtube.com/watch?v=u1yr_HZivzk
 
-export default function MultiFilters() {
+export default function MultiFilters({ openOverlay }) {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [filteredItems, setFilteredItems] = useState(projects);
-    const [selectedProject, setSelectedProject] = useState(null); // For the overlay
-    const [isOverlayOpen, setIsOverlayOpen] = useState(false); // Overlay visibility
 
     const filters = ["Software", "Graphics", "Data Analytics"];
 
     const handleFilterButtonClick = (selectedCategory) => {
         if (selectedFilters.includes(selectedCategory)) {
-            const filters = selectedFilters.filter((el) => el !== selectedCategory);
-            setSelectedFilters(filters);
+            const updatedFilters = selectedFilters.filter((el) => el !== selectedCategory);
+            setSelectedFilters(updatedFilters);
         } else {
             setSelectedFilters([...selectedFilters, selectedCategory]);
         }
@@ -36,18 +35,6 @@ export default function MultiFilters() {
         } else {
             setFilteredItems([...projects]);
         }
-    };
-
-    const openOverlay = (project) => {
-        setSelectedProject(project);
-        setIsOverlayOpen(true);
-        document.body.style.overflow = "hidden"; // Lock scrolling
-    };
-
-    const closeOverlay = () => {
-        setSelectedProject(null);
-        setIsOverlayOpen(false);
-        document.body.style.overflow = "auto"; // Unlock scrolling
     };
 
     return (
@@ -79,35 +66,11 @@ export default function MultiFilters() {
                     </div>
                 ))}
             </div>
-
-            {/* Overlay */}
-            {isOverlayOpen && selectedProject && (
-                <div className="overlay fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-                    <div className="overlay-content bg-tertiary p-8 rounded-lg relative max-w-3xl w-full">
-                        <button
-                            className="absolute top-4 right-4 text-black text-xl font-bold"
-                            onClick={closeOverlay}
-                        >
-                            &times;
-                        </button>
-                        <h2 className="silkscreen-bold text-[30px] mb-4">{selectedProject.name}</h2>
-                        <p className="tiny5-regular text-[20px] mb-4">{selectedProject.description}</p>
-                        <img
-                            src={selectedProject.image}
-                            alt={selectedProject.name}
-                            className="w-full rounded-lg"
-                        />
-                        <a
-                            href={selectedProject.source_code_link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="button mt-4 inline-block"
-                        >
-                            View Source Code
-                        </a>
-                    </div>
-                </div>
-            )}
         </div>
     );
 }
+
+// Add PropTypes for validation
+MultiFilters.propTypes = {
+    openOverlay: PropTypes.func.isRequired, // Validate that openOverlay is a required function
+};
