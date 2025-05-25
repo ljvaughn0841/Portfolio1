@@ -66,7 +66,7 @@ const Projects = () => {
 
             <div className="featured_project_section w-full flex-nowrap flex-row justify-stretch overflow-hidden grid grid-flow-col">
                 <div className="xl:block hidden">
-                    <p className="micro-5-regular text-[45px] line-spacing-1.5 leading-none">
+                    <p className="tiny5-regular text-[32px] line-spacing-1.5 leading-none">
                         Here are some of the awesome projects I&#39;ve worked on!
                     </p>
                 </div>

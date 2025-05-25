@@ -64,12 +64,14 @@ const Experience = () => {
                     <div className="text-box">
                         <h2 className="silkscreen-regular text-[30px]">Spigot</h2>
                         <small className="tiny5-regular text-[20px]">2023 - 2024</small>
-                        <p className="tiny5-regular text-[24px] leading-none">
+                        <p className="start2p text-[14px] leading-5">
                         Led android development to modify and rebrand the open-source browser Chromium into a mobile port of the Wave Browser app on desktop.
+                        <br />
                         Conducted extensive research into the Chromium Project, one of the largest open-source repositories on GitHub, to identify areas of interest for development.
+                        <br />
                         Implemented a JNI bridge to access resources and code used in the desktop application.
+                        <br />
                         Diagnosed and resolved 18 critical bugs to ensure seamless integration between git repositories.
-                        Languages: C++, Java
                         </p>
                     </div>
                 </div>

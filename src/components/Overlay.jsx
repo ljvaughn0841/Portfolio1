@@ -8,7 +8,7 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
         <div className="overlay fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
             <div className="overlay-content bg-tertiary p-8 rounded-lg relative max-w-3xl w-full">
                 <button
-                    className="absolute top-4 right-4 text-black text-xl font-bold"
+                    className="absolute top-4 right-4 text-white text-xl font-bold"
                     onClick={closeOverlay}
                 >
                     &times;

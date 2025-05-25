@@ -135,6 +135,17 @@ body:has(.card[data-color="green"]:hover) {
     transform: scale(1.25);
     transition:0.3s;
   }
+  @media (min-width: 1249px) {
+    .skill-block:nth-child(1) {
+        margin-top: 100px;
+    }
+    .skill-block:nth-child(2) {
+        margin-top: 0px;
+    }
+    .skill-block:nth-child(3) {
+        margin-top: 150px;
+    }
+  }
 
   .projects-section {
     min-height: 100vh;
@@ -288,6 +299,12 @@ h1 {
   font-size: 50px;
 }
 
+.start2p {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .micro-5-regular {
   font-family: "Micro 5", serif;
   font-weight: 400;
@@ -312,7 +329,12 @@ h1 {
   font-style: normal;
 }  
 
-
+.pixelify-sans-regular {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 
 
 /* Projects Section */
