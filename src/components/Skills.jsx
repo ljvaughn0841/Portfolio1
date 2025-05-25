@@ -5,6 +5,12 @@ import SpriteSheet from "react-responsive-spritesheet";
 import "../index.css";
 
 
+const skill_boxes = [
+    "src/assets/skill_box_silver.png",
+    "src/assets/skill_box_gold.png",
+    "src/assets/skill_box_bronze.png"
+];
+
 
 //  TODO ITEMS HERE
 //      1. Make sprite sheet image without empty space on sides
@@ -17,8 +23,8 @@ const Skills = () => {
         id="Skills">
             <h1 className='text-center mb-10 silkscreen-bold'>My Skills</h1>
             <div className="flex flex-wrap gap-10 mb-10 justify-center">
-                {mySkills.map((item) => (
-                    <div className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] max-w-[24rem] border border-orange-700"
+                {mySkills.map((item, idx) => (
+                    <div className="skill-block block relative p-0.5 bg-no-repeat bg-[length:100%_100%] max-w-[24rem] border border-orange-700"
                     key={item.id}>
                         <div className="relative z-20 flex flex-col min-h-[22rem] p-[3rem] pointer-events-none">
                             <div className='flex mb-5 align-middle'>
@@ -27,11 +33,11 @@ const Skills = () => {
                             </div>
                             <p className="mb-6 text-[20px] tiny5-regular">{item.text}</p>
                         </div>
-                        <div className="absolute top-0 left-0 w-full h-full scale-110">
+                        <div className="absolute top-0 left-0 w-full h-full z-0">
                         <SpriteSheet
-                            image={`src/assets/spritesheet.png`}
-                            widthFrame={50}
-                            heightFrame={50}
+                            image={skill_boxes[idx]}
+                            widthFrame={45}
+                            heightFrame={45}
                             steps={10}
                             fps={10}
                             autoplay={false}
