@@ -13,24 +13,31 @@ const Contact = () => {
             </div>
             */}
 
-            <div className="border border-lime-500 mr-24 ml-24 h-[46vh] relative">
+            <div className="border border-lime-500 md:mr-24 md:ml-24 h-[46vh] relative">
                 {/* Contact Info */}
-                <h1 className="silkscreen-regular">Lets Get In Touch!</h1>
+                <h1 className="silkscreen-regular text-center max-md:text-[32px]">Lets Get In Touch!</h1>
 
                 {/* Using an image for my email to prevent spam.
                 Maybe consider making a spam mail.*/}
 
-                <img src="src\assets\email.png"></img>
+                <h2 className="start2p text-center max-md:text-[12px]">ljvaughn0841@gmail.com</h2>
 
-
-
-                <div className='absolute right-[210px] bottom-[40px] size-fit'>
-                    <a href="https://www.linkedin.com/in/lou-vaughn/" target="_blank" rel="noopener noreferrer" className="linkedin-button pixel-button sprite"></a>
+                <div className="flex md:justify-end justify-center gap-12 absolute bottom-10 md:right-10 w-full">
+                    <a
+                        href="https://www.linkedin.com/in/lou-vaughn/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="linkedin-button pixel-button sprite"
+                    ></a>
+                    <a
+                        href="https://github.com/ljvaughn0841"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="github-button pixel-button sprite"
+                    ></a>
                 </div>
 
-                <div className='absolute right-[120px] bottom-[40px] size-fit'>
-                    <a href="https://github.com/ljvaughn0841" target="_blank" rel="noopener noreferrer" className="github-button pixel-button sprite"></a>
-                </div>
+                
                 
 
 

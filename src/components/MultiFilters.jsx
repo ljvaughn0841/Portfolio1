@@ -43,7 +43,7 @@ export default function MultiFilters({ openOverlay }) {
                 {filters.map((category, index) => (
                     <button
                         onClick={() => handleFilterButtonClick(category)}
-                        className={`button ${
+                        className={`button min-w-0 flex-shrink px-3 py-2 text-sm sm:text-base ${
                             selectedFilters?.includes(category) ? "active" : ""
                         }`}
                         key={`filters-${index}`}
