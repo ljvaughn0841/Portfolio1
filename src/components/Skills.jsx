@@ -22,9 +22,10 @@ const Skills = () => {
         overflow-x-hidden sm:px-0 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0" 
         id="Skills">
             <h1 className='text-center mb-10 silkscreen-bold'>My Skills</h1>
-            <div className="flex flex-wrap gap-10 mb-10 justify-center">
-                {mySkills.map((item, idx) => (
-                    <div className="skill-block block relative p-0.5 bg-no-repeat bg-[length:100%_100%] max-w-[24rem] border border-orange-700"
+            <div className="flex flex-wrap-reverse gap-10 mb-10 justify-center">
+                {mySkills.map((item, idx) => {
+                    return (
+                    <div className= {`skill-block block relative p-0.5 bg-no-repeat bg-[length:100%_100%] max-w-[24rem] border border-orange-700 custom-order-${idx}`}
                     key={item.id}>
                         <div className="relative z-20 flex flex-col min-h-[22rem] p-[3rem] pointer-events-none">
                             <div className='flex mb-5 align-middle'>
@@ -53,7 +54,8 @@ const Skills = () => {
                             />
                         </div>
                     </div>
-                ))}
+                    );
+                })}
             </div>
             <IconSkills></IconSkills>
         </div>

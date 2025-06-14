@@ -135,7 +135,9 @@ body:has(.card[data-color="green"]:hover) {
     transform: scale(1.25);
     transition:0.3s;
   }
-  @media (min-width: 1249px) {
+
+  /* May want to add some sort of graphic for the skill box bottom margins eventually*/
+  @media (min-width: 1234px) {
     .skill-block:nth-child(1) {
         margin-top: 100px;
     }
@@ -146,6 +148,12 @@ body:has(.card[data-color="green"]:hover) {
         margin-top: 150px;
     }
   }
+
+  @media (max-width: 1233px) {
+  .custom-order-0 { order: 2; }
+  .custom-order-1 { order: 3; }
+  .custom-order-2 { order: 1; }
+}
 
   .projects-section {
     min-height: 100vh;
