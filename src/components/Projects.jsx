@@ -5,6 +5,8 @@ import MultiFilters from "./MultiFilters";
 import Overlay from "./Overlay";
 import { projects } from "../constants"; // Import the projects array
 
+import phone_reveal from '../assets/PhoneReveal_WB_spritesheet.png'
+
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     const [isOverlayOpen, setIsOverlayOpen] = useState(false);
@@ -85,7 +87,7 @@ const Projects = () => {
                 </div>
                 <div ref={myRef} className="phone_reveal">
                     <SpriteSheet
-                        image={`src/assets/PhoneReveal_WB_spritesheet.png`}
+                        image={phone_reveal}
                         widthFrame={450}
                         heightFrame={750}
                         steps={20}

@@ -200,11 +200,11 @@ body:has(.card[data-color="green"]:hover) {
 
 /* Overwrites pixel button with button image classes */
 .linkedin-button.pixel-button {
-  background-image: url('src/assets/linkedin_button.png');
+  background-image: url('../assets/linkedin_button.png');
 }
 
 .github-button.pixel-button{
-  background-image: url('src/assets/github_button.png');
+  background-image: url('../assets/github_button.png');
 }
 
 /* Hover state */

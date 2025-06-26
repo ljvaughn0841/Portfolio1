@@ -4,11 +4,15 @@ import IconSkills from "../components/IconSkills";
 import SpriteSheet from "react-responsive-spritesheet";
 import "../index.css";
 
+import silver from "../assets/skill_box_silver.png";
+import gold from "../assets/skill_box_gold.png";
+import bronze from "../assets/skill_box_bronze.png";
+
 
 const skill_boxes = [
-    "src/assets/skill_box_silver.png",
-    "src/assets/skill_box_gold.png",
-    "src/assets/skill_box_bronze.png"
+    silver,
+    gold,
+    bronze
 ];
 
 

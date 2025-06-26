@@ -6,6 +6,11 @@ import "../index.css";
 import SpriteSheet from "react-responsive-spritesheet"
 import {Parallax, ParallaxLayer} from '@react-spring/parallax';
 
+import desktop_spritesheet from "../assets/desktop_spritesheet.png";
+import painting from '../assets/LighthousePainting.png';
+import bg_items from '../assets/BGLayoutTest.png';
+import me from '../assets/me_2_spritesheet_83x127-Sheet.png';
+import cat from '../assets/cat_spritesheet.png';
 
 const Hero = () => {
     const totalFrames = 15;
@@ -96,16 +101,16 @@ const Hero = () => {
             </div>
 
             <div className='sprite relative' id='paint'>
-                <img src = "src\assets\LighthousePainting.png" className='w-48 absolute right-[55%] top-[40px]'></img>
+                <img src = {painting} className='w-48 absolute right-[55%] top-[40px]'></img>
             </div>
 
             <div className='sprite relative' id='decor'>
-                <img src = "src\assets\BGLayoutTest.png" className='w-[800px] absolute right-[10%] top-[-90px]'></img>
+                <img src = {bg_items} className='w-[800px] absolute right-[10%] top-[-90px]'></img>
             </div>
 
             <div className="sprite sprite-1 w-full" id='desktop'>
                     <SpriteSheet
-                        image={`src/assets/desktop_spritesheet.png`}
+                        image={desktop_spritesheet}
                         widthFrame={200}
                         heightFrame={150}
                         steps={15}
@@ -121,7 +126,7 @@ const Hero = () => {
 
             <div className='sprite sprite-me' id='me'>
             <SpriteSheet
-                        image={`src/assets/me_2_spritesheet_83x127-Sheet.png`}
+                        image={me}
                         widthFrame={83}
                         heightFrame={127}
                         steps={15}
@@ -133,7 +138,7 @@ const Hero = () => {
             </div>
             <div className='sprite sprite-cat max-w-96 max-h-96' id='cat'>
             <SpriteSheet
-                        image={`src/assets/cat_spritesheet.png`}
+                        image={cat}
                         widthFrame={45}
                         heightFrame={45}
                         steps={10}

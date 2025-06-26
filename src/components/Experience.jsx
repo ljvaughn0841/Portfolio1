@@ -5,6 +5,8 @@
 
 import "../index.css";
 import { useEffect } from "react";
+import ljv_logo from "../assets/ljv_logo.png";
+import spigot_logo from "../assets/spigot_logo.png";
 
 const Experience = () => {
     useEffect(() => {
@@ -44,7 +46,7 @@ const Experience = () => {
             <h1 className="text-center mb-10 silkscreen-bold text-3xl sm:text-5xl lg:text-6xl leading-tight break-words">Experience</h1>
             <div className="mt-20 timeline">
                 <div className="timeline-container timeline-left">
-                <img src ="src\assets\ljv_logo.png" className="rounded-full scale-[30%] sprite"></img>
+                <img src ={ljv_logo} className="rounded-full scale-[30%] sprite"></img>
                 <span className="timeline-left-arrow"></span>
                     <div className="text-box">
                         <h2 className="silkscreen-regular text-[30px]">Freelance Developer</h2>
@@ -59,7 +61,7 @@ const Experience = () => {
                 </div>
 
                 <div className="timeline-container timeline-right">
-                    <img src="src/assets/spigot_logo.png" className="rounded-full scale-[30%]" alt="Spigot Logo" />
+                    <img src={spigot_logo} className="rounded-full scale-[30%]" alt="Spigot Logo" />
                     <span className="timeline-right-arrow"></span>
                     <div className="text-box">
                         <h2 className="silkscreen-regular text-[30px]">Spigot</h2>

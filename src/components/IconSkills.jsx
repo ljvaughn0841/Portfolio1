@@ -25,7 +25,7 @@ const IconSkills = () => {
         <div className="flex flex-wrap gap-5 mb-10 border-orange-300 border justify-center min-h-fit">
             <div className="SkillIcon min-w-32 sm:my-5">
                 <SpriteSheet
-                image={`src/assets/C_spritesheet.png`}
+                image={`../src/assets/C_spritesheet.png`}
                 widthFrame={70}
                 heightFrame={50}
                 steps={30}

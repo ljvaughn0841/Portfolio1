@@ -24,7 +24,15 @@
 //     tripguide,
 //     threejs,
 //   } from "../assets";
-  
+
+
+import coding from "../assets/Coding.png";
+import datasci from "../assets/DataSci.png";
+import web from "../assets/Web.png";
+import wave from "../assets/wave_browser_project.png";
+import foresight from "../assets/foresight_project.png";
+import can from "../assets/can_project.png";
+
   export const navLinks = [
     {
       id: "Home",
@@ -53,19 +61,19 @@
     id: "software",
     title: "Software Development",
     text: "Skilled in software development primarily utilizing: Python, C++, Java, JavaScript.",
-    icon: "src/assets/Coding.png"
+    icon: coding
   },
   {
     id: "data",
     title: "Data Science",
     text: "Experienced in data science and analytics using Python, R, and SQL.",
-    icon: "src/assets/DataSci.png"
+    icon: datasci
   },
   {
     id: "web",
     title: "Web Development",
     text: "Experienced in developing websites in HTML, CSS, JS, Tailwind. As well as utilizing no/low code solutions like Wordpress, Wix, and Shopify.",
-    icon: "src/assets/Web.png"
+    icon: web
   }
   ];
 
@@ -75,7 +83,7 @@
       description:
         "For my capstone project at FGCU our team worked on developing a port of Spigots Wave Browser applications for both Android and iOS devices for our senior group project. Our project focused on rebranding the open-source Chromium browser and integrating Wave Browsers search engine for mobile devices.",
       category: 'Software',
-      image: "src/assets/wave_browser_project.png",
+      image: wave,
       source_code_link: "https://github.com/",
     },
     {
@@ -83,7 +91,7 @@
       description:
         "Fore Sight was created as a group project for our Computer Networks class at FGCU. It utilizes an AI trained for Monocular Depth Estimation called MiDaS to produce a depth map then detects hard edges in the depth map using Canny Edge Detection to find potential hazards.",
       category: 'Software',
-      image: "src/assets/foresight_project.png",
+      image: foresight,
       source_code_link: "https://github.com/",
     },
     {
@@ -91,7 +99,7 @@
       description:
         "When I decided to pursue a masters in Data Analytics, I completed this project using Canvas's API in order to find out what teachers I should ask for references.",
       category:'Data Analytics',
-      image: "src/assets/wave_browser_project.png",
+      image: wave,
       source_code_link: "https://github.com/",
     },
     {
@@ -99,7 +107,7 @@
       description:
         "Created this rotating can in blender as a freelance project for Don Pablo Coffee.",
       category:'Graphics',
-      image: "src/assets/can_project.png",
+      image: can,
       source_code_link: "https://github.com/",
     },
   ];
