@@ -20,7 +20,7 @@ const Contact = () => {
                 {/* Using an image for my email to prevent spam.
                 Maybe consider making a spam mail.*/}
 
-                <h2 className="start2p text-center max-md:text-[12px]">ljvaughn0841@gmail.com</h2>
+                <h2 className="start2p text-center max-md:text-[12px]">loujvaughn@gmail.com</h2>
 
                 <div className="flex md:justify-end justify-center gap-12 absolute bottom-10 md:right-10 w-full">
                     <a

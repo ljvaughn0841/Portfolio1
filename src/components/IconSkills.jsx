@@ -18,14 +18,21 @@ Use goToAndPause to progress to the horizontal percentage in the frames
 
 
 // TODO: use a map to load all the images in a div with a min width
+//       and then use custom CSS to set order (like with main skill boxes) so that best skills are on top.
 
+
+import Cplusplus_sprite from "../assets/C_spritesheet.png";
+import JS_sprite from "../assets/JS_spritesheet.png";
+import PY_sprite from "../assets/PY_spritesheet.png";
+import HTML_sprite from "../assets/HTML_spritesheet.png";
+import CSS_sprite from "../assets/CSS_spritesheet.png";
 
 const IconSkills = () => {
     return (
-        <div className="flex flex-wrap gap-5 mb-10 border-orange-300 border justify-center min-h-fit">
+        <div className="flex flex-wrap-reverse gap-5 mb-10 border-orange-300 border justify-center min-h-fit">
             <div className="SkillIcon min-w-32 sm:my-5">
                 <SpriteSheet
-                image={`../src/assets/C_spritesheet.png`}
+                image={Cplusplus_sprite}
                 widthFrame={70}
                 heightFrame={50}
                 steps={30}
@@ -44,7 +51,7 @@ const IconSkills = () => {
 
             <div className="SkillIcon min-w-32 sm:my-5">
                 <SpriteSheet
-                image={`src/assets/JS_spritesheet.png`}
+                image={JS_sprite}
                 widthFrame={70}
                 heightFrame={50}
                 steps={30}
@@ -63,7 +70,7 @@ const IconSkills = () => {
                 
                 <div className="SkillIcon min-w-32 sm:my-5">
                 <SpriteSheet
-                image={`src/assets/PY_spritesheet.png`}
+                image={PY_sprite}
                 widthFrame={70}
                 heightFrame={50}
                 steps={30}
@@ -82,7 +89,7 @@ const IconSkills = () => {
             
                 <div className="SkillIcon min-w-32 sm:my-5">
                 <SpriteSheet
-                image={`src/assets/HTML_spritesheet.png`}
+                image={HTML_sprite}
                 widthFrame={70}
                 heightFrame={50}
                 steps={30}
@@ -101,7 +108,7 @@ const IconSkills = () => {
 
                 <div className="SkillIcon min-w-32 sm:my-5">
                 <SpriteSheet
-                image={`src/assets/CSS_spritesheet.png`}
+                image={CSS_sprite}
                 widthFrame={70}
                 heightFrame={50}
                 steps={30}
