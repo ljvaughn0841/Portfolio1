@@ -72,7 +72,7 @@ import can from "../assets/can_project.png";
   {
     id: "web",
     title: "Web Development",
-    text: "Experienced in developing websites in HTML, CSS, JS, Tailwind. As well as utilizing no/low code solutions like Wordpress, Wix, and Shopify.",
+    text: "Experienced in web development. As well as utilizing low code solutions like Wordpress, Wix, and Shopify.",
     icon: web
   }
   ];

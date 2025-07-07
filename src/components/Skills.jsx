@@ -29,14 +29,16 @@ const Skills = () => {
             <div className="flex flex-wrap-reverse gap-10 mb-10 justify-center">
                 {mySkills.map((item, idx) => {
                     return (
-                    <div className= {`skill-block block relative p-0.5 bg-no-repeat bg-[length:100%_100%] max-w-[24rem] border border-orange-700 custom-order-${idx}`}
+                    <div className= {`skill-block block aspect-square relative p-0.5 bg-no-repeat bg-[length:100%_100%] max-w-[24rem] border border-orange-700 custom-order-${idx}`}
                     key={item.id}>
-                        <div className="relative z-20 flex flex-col min-h-[22rem] p-[3rem] pointer-events-none">
-                            <div className='flex mb-5 align-middle'>
-                                <img src= {item.icon} className='w-24 h-24 sprite'></img>
-                                <h5 className="ml-3 text-[32px] tiny5-regular">{item.title}</h5>
+                        <div className="relative z-20 flex flex-col h-full p-[3rem] pointer-events-none">
+                            <div className='flex mb-5'>
+                                <img src= {item.icon} className='w-16 h-16 sm:w-24 sm:h-24 sprite'></img>
+                                <div className='align-middle items-center flex'>
+                                    <h5 className="ml-3 text-[clamp(1rem,6vw,2rem)] tiny5-regular">{item.title}</h5>
+                                </div>
                             </div>
-                            <p className="mb-6 text-[20px] tiny5-regular">{item.text}</p>
+                            <p className="mb-6 text-[clamp(0.75rem,4vw,1.25rem)] tiny5-regular">{item.text}</p>
                         </div>
                         <div className="absolute top-0 left-0 w-full h-full z-0">
                         <SpriteSheet
