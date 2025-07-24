@@ -237,6 +237,18 @@ body:has(.card[data-color="green"]:hover) {
   background-image: linear-gradient(#151030, #050816)
 }
 
+@media (max-width: 767px){
+  .hero-section {
+    height: 1100px;
+    width: 100%;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    background-image: linear-gradient(#151030, #050816);
+  }
+}
+
+
 .sprite {
   background-size: cover;
   image-rendering: pixelated;
@@ -248,10 +260,10 @@ body:has(.card[data-color="green"]:hover) {
   .sprite-1{
     position: absolute;
     width: 770px;
-    top: 1600px;
+    top: 1200px;
     left: 50%;
     transform: translate(-50%, 0);
-    z-index: 3;
+    z-index: 10;
   }
 }
 @media (min-width: 768px){
@@ -261,7 +273,7 @@ body:has(.card[data-color="green"]:hover) {
   top: 1600px;
   left: 50%;
   transform: translate(-50%, 0);
-  z-index: 3;
+  z-index: 10;
 }
 }
   
@@ -280,11 +292,31 @@ body:has(.card[data-color="green"]:hover) {
   margin-left: 150px;
 }
 
-.sprite-cat {
+@media (max-width: 767px){
+.sprite-me {
+  position: absolute;
+  width: 300px;
+  top: 220px;
   z-index: 2;
+  margin-left: 0px;
+}}
+
+.sprite-cat {
+  position: absolute;
+  width: 450px;
+  z-index: 3;
   margin-left: 50%;
-  margin-top: 750px;
+  margin-top: 700px;
 }
+
+@media (max-width: 767px){
+.sprite-cat {
+  position: absolute;
+  width: 200px;
+  z-index: 3;
+  margin-left: 45%;
+  margin-top: 650px;
+}}
 
 .sprite-painting {
   height: 300px;

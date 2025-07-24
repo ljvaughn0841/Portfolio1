@@ -17,6 +17,20 @@ const Hero = () => {
 
     var spritesheetInstance = null;
 
+    const screenWidth = window.screen.width;
+
+    // Default Speed Values (Desktop)
+    let desktopmt = -1486;
+    let mespeed = 0.55;
+    let decorspeed = 0.3;
+    
+    // Mobile
+    if (screenWidth < 768) {
+        mespeed = 1.2;
+        desktopmt = -660;
+        decorspeed = 0.3;
+    }
+
     const scrollCallback = () => {
         const position = window.scrollY;
         // divide the hero section into frames for the animations
@@ -43,21 +57,25 @@ const Hero = () => {
             //console.log("position is:", position)
             let desktop_pos = position * - 2.5
             //console.log(desktop_pos)
-            if (desktop_pos >= -1486){
+
+
+            if (desktop_pos >= desktopmt){
                 desktop.style.marginTop = desktop_pos + 'px'
-                me.style.marginTop = position * + 0.55 + 'px'
-                decor.style.marginTop = position * + 0.3 + 'px'
+                me.style.marginTop = position * + mespeed + 'px'
+                decor.style.marginTop = position * + decorspeed + 'px'
                 painting.style.marginTop = position * + 0.19 + 'px'
                 //cat.style.marginTop = 420 + + position * + 0.55 + 'px'
             }
             else{
-                desktop.style.marginTop = -1486 +'px';
+                desktop.style.marginTop = desktopmt +'px';
             }
+            
             //back.style.marginTop = position * + 0.2 + 'px';
             
         }else{
             //console.log(position)
-            desktop.style.marginTop = -1486 +'px';
+            desktop.style.marginTop =desktopmt +'px';
+            
             //back.style.marginTop = 15 * + 0.2 + 'px';
         }
     };
@@ -95,17 +113,31 @@ const Hero = () => {
                 />
             </div> */}
 
-            <div className='mt-20 ml-24 mr-24 justify-center'>
-                <h1 className='mr-auto ml-auto text-center silkscreen-regular text-9xl'>Lou Vaughn</h1>
-                <h1 className='mr-auto ml-auto text-center tiny5-regular'>Developer / Data Scientist</h1>
+            <div className='mt-20 ml-6 mr-6 md:ml-24 md:mr-24 justify-center'>
+                <h1 className='mr-auto ml-auto text-center silkscreen-regular text-4xl md:text-7xl'>Lou Vaughn</h1>
+                <h1 className='mr-auto ml-auto text-center tiny5-regular text-xl md:text-5xl'>Developer / Data Scientist</h1>
             </div>
 
             <div className='sprite relative' id='paint'>
-                <img src = {painting} className='w-48 absolute right-[55%] top-[40px]'></img>
+                <img src = {painting} className='absolute right-[55%] top-[20px] md:top-[40px] w-[120px] md:w-48'></img>
             </div>
 
+            {/* <div className='sprite relative' id='decor'>
+                <img
+                    src={bg_items}
+                    className='absolute pl-10 left-1/2 md:left-[70%] top-[100px] md:top-[0px] w-[400px] md:w-[800px] max-w-none'
+                    style={{ transform: 'translateX(-50%)' }}
+                    alt="Decor"
+                />
+            </div> */}
+
             <div className='sprite relative' id='decor'>
-                <img src = {bg_items} className='w-[800px] absolute right-[10%] top-[-90px]'></img>
+                <img
+                    src={bg_items}
+                    className='absolute pl-10 left-[70%] md:left-[70%] top-[100px] md:top-[0px] w-[500px] md:w-[800px] max-w-none'
+                    style={{ transform: 'translateX(-50%)' }}
+                    alt="Decor"
+                />
             </div>
 
             <div className="sprite sprite-1 w-full" id='desktop'>
