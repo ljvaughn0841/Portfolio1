@@ -26,7 +26,7 @@ const Experience = () => {
                         // if (entry.target === timeline) {
                         //     timeline.classList.remove("animate-line"); // Optional: Reset line animation
                         // } else {
-                        entry.target.classList.remove("animate"); // Optional: Reset container animations
+                        // entry.target.classList.remove("animate"); // Optional: Reset container animations
                         // }
                     }
                 });

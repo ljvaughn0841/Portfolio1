@@ -1,4 +1,3 @@
-
 import SpriteSheet from "react-responsive-spritesheet"
 
 /*
@@ -29,101 +28,34 @@ import CSS_sprite from "../assets/CSS_spritesheet.png";
 
 const IconSkills = () => {
     return (
-        <div className="flex flex-wrap-reverse gap-5 mb-10 border-orange-300 border justify-center min-h-fit">
-            <div className="SkillIcon min-w-32 sm:my-5">
-                <SpriteSheet
-                image={Cplusplus_sprite}
-                widthFrame={70}
-                heightFrame={50}
-                steps={30}
-                fps={10}
-                autoplay={true}
-                loop={true}
-                isResponsive={true}
-                onLoopComplete={spritesheet => {
-                    if(spritesheet.getInfo('direction') == 'forward')
-                        spritesheet.setDirection('rewind')
-                    else
-                    spritesheet.setDirection('forward')
-                  }}
-                />
-            </div>
-
-            <div className="SkillIcon min-w-32 sm:my-5">
-                <SpriteSheet
-                image={JS_sprite}
-                widthFrame={70}
-                heightFrame={50}
-                steps={30}
-                fps={10}
-                autoplay={true}
-                loop={true}
-                isResponsive={true}
-                onLoopComplete={spritesheet => {
-                    if(spritesheet.getInfo('direction') == 'forward')
-                        spritesheet.setDirection('rewind')
-                    else
-                    spritesheet.setDirection('forward')
-                  }}
-                />
+        <div className="flex flex-wrap gap-5 mb-10 border-orange-300 border justify-center items-center min-h-fit">
+            {[
+                { image: Cplusplus_sprite, label: "C++" },
+                { image: JS_sprite, label: "JavaScript" },
+                { image: PY_sprite, label: "Python" },
+                { image: HTML_sprite, label: "HTML" },
+                { image: CSS_sprite, label: "CSS" },
+            ].map((skill, idx) => (
+                <div className="SkillIcon flex flex-col items-center w-32 sm:my-5" key={skill.label}>
+                    <SpriteSheet
+                        image={skill.image}
+                        widthFrame={70}
+                        heightFrame={50}
+                        steps={30}
+                        fps={10}
+                        autoplay={true}
+                        loop={true}
+                        isResponsive={true}
+                        onLoopComplete={spritesheet => {
+                            if (spritesheet.getInfo('direction') === 'forward')
+                                spritesheet.setDirection('rewind')
+                            else
+                                spritesheet.setDirection('forward')
+                        }}
+                    />
+                    <h1 className="text-center text-xl mt-2 tiny5-regular">{skill.label}</h1>
                 </div>
-                
-                <div className="SkillIcon min-w-32 sm:my-5">
-                <SpriteSheet
-                image={PY_sprite}
-                widthFrame={70}
-                heightFrame={50}
-                steps={30}
-                fps={10}
-                autoplay={true}
-                loop={true}
-                isResponsive={true}
-                onLoopComplete={spritesheet => {
-                    if(spritesheet.getInfo('direction') == 'forward')
-                        spritesheet.setDirection('rewind')
-                    else
-                    spritesheet.setDirection('forward')
-                  }}
-                />
-                </div>
-            
-                <div className="SkillIcon min-w-32 sm:my-5">
-                <SpriteSheet
-                image={HTML_sprite}
-                widthFrame={70}
-                heightFrame={50}
-                steps={30}
-                fps={10}
-                autoplay={true}
-                loop={true}
-                isResponsive={true}
-                onLoopComplete={spritesheet => {
-                    if(spritesheet.getInfo('direction') == 'forward')
-                        spritesheet.setDirection('rewind')
-                    else
-                    spritesheet.setDirection('forward')
-                  }}
-                />
-                </div>
-
-                <div className="SkillIcon min-w-32 sm:my-5">
-                <SpriteSheet
-                image={CSS_sprite}
-                widthFrame={70}
-                heightFrame={50}
-                steps={30}
-                fps={10}
-                autoplay={true}
-                loop={true}
-                isResponsive={true}
-                onLoopComplete={spritesheet => {
-                    if(spritesheet.getInfo('direction') == 'forward')
-                        spritesheet.setDirection('rewind')
-                    else
-                    spritesheet.setDirection('forward')
-                  }}
-                />
-                </div>
+            ))}
         </div>
         
         )
