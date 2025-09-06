@@ -65,14 +65,14 @@ const Projects = () => {
             <h1 className="text-center mb-10 silkscreen-bold text-3xl sm:text-5xl lg:text-6xl leading-tight break-words">
                 Projects
             </h1>
-
-            <div className="featured_project_section w-full flex-nowrap flex-row justify-stretch overflow-hidden grid grid-flow-col">
-                <div className="xl:block hidden">
-                    <p className="start2p text-[24px] leading-12">
+            <div className="lg:block hidden">
+                    <p className="start2p text-[24px] leading-12 absolute max-w-[500px]">
                         Here are some of the awesome projects I&#39;ve worked on!
                     </p>
-                </div>
-                <div className="featured_project_button mt-96 justify-self-end silkscreen-regular">
+            </div>
+            <div className="featured_project_section w-full flex-nowrap flex-row justify-center overflow-hidden grid grid-flow-col">
+                
+                <div className="featured_project_button mt-96 justify-self-end silkscreen-regular hidden sm:block">
                     <button
                         className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-300"
                         onClick={() => {

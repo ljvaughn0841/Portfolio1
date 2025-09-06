@@ -81,10 +81,11 @@ import can from "../assets/can_project.png";
     {
       name: "Wave Browser for Mobile",
       description:
-        "For my capstone project at FGCU our team worked on developing a port of Spigots Wave Browser applications for both Android and iOS devices for our senior group project. Our project focused on rebranding the open-source Chromium browser and integrating Wave Browsers search engine for mobile devices.",
+        "For my capstone project at FGCU our team worked on developing a port of Spigots (Now Eightpoint's) Wave Browser applications for both Android and iOS devices for our senior group project. Our project focused on rebranding the open-source Chromium browser and integrating Wave Browsers search engine for mobile devices.",
       category: 'Software',
       image: wave,
       source_code_link: "https://github.com/",
+      external_link: "https://wavebrowser.com/",
     },
     {
       name: "ForeSight",
@@ -100,6 +101,8 @@ import can from "../assets/can_project.png";
         "When I decided to pursue a masters in Data Analytics, I completed this project using Canvas's API in order to find out what teachers I should ask for references.",
       category:'Data Analytics',
       image: wave,
+      image2: foresight,
+      image3: can,
       source_code_link: "https://github.com/",
     },
     {

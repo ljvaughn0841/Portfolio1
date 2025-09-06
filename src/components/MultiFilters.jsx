@@ -43,7 +43,7 @@ export default function MultiFilters({ openOverlay }) {
                 {filters.map((category, index) => (
                     <button
                         onClick={() => handleFilterButtonClick(category)}
-                        className={`button min-w-0 flex-shrink px-3 py-2 text-sm sm:text-base ${
+                        className={`button min-w-[95px] flex-shrink px-3 py-2 text-[13px] sm:text-base ${
                             selectedFilters?.includes(category) ? "active" : ""
                         }`}
                         key={`filters-${index}`}
@@ -60,7 +60,7 @@ export default function MultiFilters({ openOverlay }) {
                         className="item bg-tertiary p-5 rounded-2xl sm:max-w-[360px] w-full mb-5 cursor-pointer"
                         onClick={() => openOverlay(item)} // Open overlay on click
                     >
-                        <img src={item.image} alt={item.name} />
+                        <img src={item.image} alt={item.name} style={{ aspectRatio: "11/8" }} />
                         <p className="silkscreen-regular">{item.name}</p>
                         <p className="category tiny5-regular">{item.category}</p>
                     </div>
