@@ -15,14 +15,14 @@ const Contact = () => {
 
             <div className="border border-lime-500 md:mr-24 md:ml-24 h-[46vh] relative">
                 {/* Contact Info */}
-                <h1 className="silkscreen-regular text-center max-md:text-[32px]">Lets Get In Touch!</h1>
+                <h1 className="silkscreen-regular text-center max-md:text-[32px] mt-10">Lets Get In Touch!</h1>
 
                 {/* Using an image for my email to prevent spam.
                 Maybe consider making a spam mail.*/}
 
                 <h2 className="start2p text-center max-md:text-[12px]">loujvaughn@gmail.com</h2>
 
-                <div className="flex md:justify-end justify-center gap-12 absolute bottom-10 md:right-10 w-full">
+                <div className="flex justify-center gap-12 absolute bottom-20 w-full">
                     <a
                         href="https://www.linkedin.com/in/lou-vaughn/"
                         target="_blank"
