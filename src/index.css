@@ -408,10 +408,10 @@ h1 {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-
+/* Looks good in overlay but not on the multifilters (because of color change)
 .button:hover {
-  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0);
-}
+  background: #241c4d;
+} */
 
 .active {
   background-color: #6f6994;
@@ -456,8 +456,30 @@ h1 {
   cursor: pointer;
 }
 
+.slider-wrapper {
+  position: relative;
+  margin: 0 auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
 
+.slider-wrapper .slider::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
 
+.slider {
+  display: flex;
+  aspect-ratio: 16 / 9;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
 
 
 /* Experience Section */
