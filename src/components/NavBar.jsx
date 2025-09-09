@@ -1,10 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import  {Link} from 'react-router-dom';
 
 //import { styles } from '../styles';
 import { navLinks } from '../constants';
 const NavBar = () => {
     const [active, setActive] = useState('')
+
+    useEffect(() => {
+        const handleScroll = () => {
+          const sections = navLinks.map(link => document.getElementById(link.id));
+          const scrollPos = window.scrollY + 500; // offset 500 for contact section (footer)
+          for (let section of sections) {
+            if (section && section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+              setActive(section.id);
+              break;
+            }
+          }
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
 
     return (
         <nav 
@@ -19,7 +34,7 @@ const NavBar = () => {
                         active === Link.title
                         ? "text-white"
                         : "text-secondary"
-                    } hover:text-white text-[20px] font-medium cursor-pointer
+                    } hover:text-[#86829b] text-[20px] font-medium cursor-pointer
                     `}
                     onClick={() => setActive(Link.title)}
                     >
