@@ -56,7 +56,7 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                         href={selectedProject.source_code_link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="button mt-4 inline-block"
+                        className="button mt-4 inline-block silkscreen-regular"
                     >
                         View Source Code
                     </a>
@@ -66,7 +66,7 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                         href={selectedProject.external_link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="button mt-4 inline-block"
+                        className="button mt-4 inline-block silkscreen-regular"
                     >
                         See More
                     </a>

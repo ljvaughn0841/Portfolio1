@@ -73,7 +73,7 @@ const Projects = () => {
             <div className="featured_project_section w-full flex flex-col lg:flex-row items-center justify-center overflow-hidden">
                 {/* Optional: Add text or other content on the left here if needed */}
                 <div className="flex-1"></div>
-                <div ref={myRef} className="phone_reveal relative lg:ml-auto lg:mr-0 lg:order-2 order-1">
+                <div ref={myRef} className="phone_reveal relative lg:ml-auto lg:mr-0 lg:order-2 order-1 mb-10 lg:mb-0">
                     <SpriteSheet
                         image={phone_reveal}
                         widthFrame={450}
@@ -123,8 +123,8 @@ const Projects = () => {
                         </defs>
                     </svg>
                     <button
-                        className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-300 silkscreen-regular absolute left-10 bottom-0 z-20
-                                   lg:-left-80 lg:bottom-8"
+                        className="px-10 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-300 silkscreen-regular absolute left-1/2 -translate-x-1/2 max-lg:translate-y-1/2 bottom-0 z-20
+                                   lg:-left-80 lg:bottom-8 lg:translate-x-0 lg:px-12 whitespace-nowrap"
                         onClick={() => {
                             const waveBrowserProject = projects.find(
                                 (project) => project.name === "Wave Browser for Mobile"
@@ -132,7 +132,7 @@ const Projects = () => {
                             openOverlay(waveBrowserProject);
                         }}
                     >
-                        Featured Project Button
+                        Featured Project
                     </button>
                 </div>
             </div>
