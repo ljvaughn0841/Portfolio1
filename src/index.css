@@ -505,7 +505,7 @@ h1 {
   left: 50%;
   margin-left: -3px;
   z-index: 0;
-  transition: height 2s linear; /* Smooth transition */
+  transition: height 1s linear; /* Smooth transition */
 }
 
 .timeline.animate-line::after {
