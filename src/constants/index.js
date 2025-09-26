@@ -31,7 +31,9 @@ import datasci from "../assets/DataSci.png";
 import web from "../assets/Web.png";
 import wave from "../assets/wave_browser_project.png";
 import foresight from "../assets/foresight_project.png";
-import can from "../assets/can_project.png";
+import solarroof from "../assets/solarroof.png";
+import tradenetwork1 from "../assets/trade_network1.png";
+import tumor from "../assets/tumor.png";
 
   export const navLinks = [
     {
@@ -84,7 +86,6 @@ import can from "../assets/can_project.png";
         "For my capstone project at FGCU our team worked on developing a port of Spigots (Now Eightpoint's) Wave Browser applications for both Android and iOS devices for our senior group project. Our project focused on rebranding the open-source Chromium browser and integrating Wave Browsers search engine for mobile devices.",
       category: 'Software',
       image: wave,
-      source_code_link: "https://github.com/",
       external_link: "https://wavebrowser.com/",
     },
     {
@@ -93,24 +94,31 @@ import can from "../assets/can_project.png";
         "Fore Sight was created as a group project for our Computer Networks class at FGCU. It utilizes an AI trained for Monocular Depth Estimation called MiDaS to produce a depth map then detects hard edges in the depth map using Canny Edge Detection to find potential hazards.",
       category: 'Software',
       image: foresight,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/ljvaughn0841/ForeSight-FGCU",
     },
     {
-      name: "Reference Analytics",
+      name: "KnightHacks VII Winner - Watt Are You Doing?",
       description:
-        "When I decided to pursue a masters in Data Analytics, I completed this project using Canvas's API in order to find out what teachers I should ask for references.",
+        "I collaborated with a team to build a Streamlit web app that generates personalized solar reports for consumers. The application integrates Google’s Geocoding and Solar APIs to map user addresses, assess roof size and environmental factors, and evaluate solar potential. I also developed a forecasting model to estimate lifetime savings from solar adoption, helping users understand both the environmental and financial benefits of switching to solar.",
       category:'Data Analytics',
-      image: wave,
-      image2: foresight,
-      image3: can,
-      source_code_link: "https://github.com/",
+      image: solarroof,
+      source_code_link: "https://github.com/jtran6796/Efficient-Energy",
+      external_link: "https://devpost.com/software/wattareyoudoing",
     },
     {
-      name: "Rotating Can",
+      name: "Trade Network Analysis",
       description:
-        "Created this rotating can in blender as a freelance project for Don Pablo Coffee.",
-      category:'Graphics',
-      image: can,
-      source_code_link: "https://github.com/",
+        "I analyzed over 17,000 international trade routes across 226 countries to model the global food trade network. Using community detection methods, I identified clusters and patterns in trade relationships, then evaluated the network’s resilience under simulated disruptions to uncover key vulnerabilities. The project was implemented with Python, OpenCV, NumPy, Matplotlib, and PyTorch.",
+      category:'Data Analytics',
+      image: tradenetwork1,
+      // external_link: "WIP",
+    },
+    {
+      name: "Tumor Detection and Classification with Vision Transformers",
+      description:
+        "I fine-tuned a Vision Transformer (ViT) model to detect and classify brain tumors in MRI scans, achieving 80% test accuracy on a medical imaging dataset. To improve stability and performance with limited labeled data, I applied progressive unfreezing during training to gradually fine-tune deeper layers of the model. The project was implemented using Python, Hugging Face, PyTorch, and CUDA.",
+      category:'Data Analytics',
+      image: tumor,
+      // external_link: "WIP",
     },
   ];
