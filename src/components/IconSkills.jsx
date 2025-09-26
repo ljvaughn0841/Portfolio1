@@ -28,7 +28,7 @@ import CSS_sprite from "../assets/CSS_spritesheet.png";
 
 const IconSkills = () => {
     return (
-        <div className="flex flex-wrap gap-5 mb-10 border-orange-300 border justify-center items-center min-h-fit">
+        <div className="flex flex-wrap gap-5 mb-10 justify-center items-center min-h-fit">
             {[
                 { image: Cplusplus_sprite, label: "C++" },
                 { image: JS_sprite, label: "JavaScript" },

@@ -59,7 +59,7 @@ const Projects = () => {
 
     return (
         <div
-            className="projects-section border border-x-teal-400 sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0"
+            className="projects-section sm:px-16 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0"
             id="Projects"
         >
             <h1 className="text-center lg:mb-10 silkscreen-bold text-3xl sm:text-5xl lg:text-6xl leading-tight break-words">

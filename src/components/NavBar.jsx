@@ -29,7 +29,7 @@ const NavBar = () => {
         <nav 
         className = {'${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-50 bg-tertiary'}>
 
-        <div className='w-full flex justify-center items-center max-w-7xl mx-auto content-center border border-red-800'>
+        <div className='w-full flex justify-center items-center max-w-7xl mx-auto content-center'>
             {/* Desktop NavBar */}
             <ul className="list-none hidden sm:flex flex-row gap-10 tiny5-regular">
                 {navLinks.map((Link) => (

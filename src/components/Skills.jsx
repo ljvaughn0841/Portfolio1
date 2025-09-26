@@ -22,14 +22,14 @@ const skill_boxes = [
 //      3. It might be nice to have different sprites for each skill, and heights symbolic of rank.
 const Skills = () => {
     return (
-        <div className="skills-section mt-10 border border-green-500 
+        <div className="skills-section mt-10
         overflow-x-hidden sm:px-0 px-6 sm:py-16 py-10 max-w-7xl mx-auto relative z-0" 
         id="Skills">
             <h1 className='text-center mb-10 silkscreen-bold'>My Skills</h1>
             <div className="flex flex-wrap-reverse gap-10 mb-10 justify-center">
                 {mySkills.map((item, idx) => {
                     return (
-                    <div className= {`skill-block block aspect-square relative p-0.5 bg-no-repeat bg-[length:100%_100%] max-w-[24rem] border border-orange-700 custom-order-${idx}`}
+                    <div className= {`skill-block block aspect-square relative p-0.5 bg-no-repeat bg-[length:100%_100%] max-w-[24rem] custom-order-${idx}`}
                     key={item.id}>
                         <div className="relative z-20 flex flex-col h-full p-[3rem] pointer-events-none">
                             <div className='flex mb-5'>

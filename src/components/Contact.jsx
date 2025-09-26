@@ -5,7 +5,7 @@ import SpriteSheet from "react-responsive-spritesheet";
 // TODO: Testimonials Section. Need at least 3 testimonials to make it look good.
 const Contact = () => {
     return (
-        <div className="contact-section border border-purple-600" id="Contact">
+        <div className="contact-section" id="Contact">
             {/* Testimonials WIP (double contact-section height when adding)
 
             <div className="testimonials border border-l-rose-600">
@@ -13,7 +13,7 @@ const Contact = () => {
             </div>
             */}
 
-            <div className="border border-lime-500 md:mr-24 md:ml-24 h-[46vh] relative">
+            <div className="md:mr-24 md:ml-24 h-[46vh] relative">
                 {/* Contact Info */}
                 <h1 className="silkscreen-regular text-center max-md:text-[32px] mt-10">Lets Get In Touch!</h1>
 
