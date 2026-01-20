@@ -5,7 +5,7 @@ import MultiFilters from "./MultiFilters";
 import Overlay from "./Overlay";
 import { projects } from "../constants"; // Import the projects array
 
-import phone_reveal from '../assets/PhoneReveal_WB_spritesheet.png'
+import phone_reveal from '../assets/PhoneReveal_WB_spritesheet2.png'
 
 const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);

@@ -17,9 +17,6 @@ const Contact = () => {
                 {/* Contact Info */}
                 <h1 className="silkscreen-regular text-center max-md:text-[32px] mt-10">Lets Get In Touch!</h1>
 
-                {/* Using an image for my email to prevent spam.
-                Maybe consider making a spam mail.*/}
-
                 <h2 className="start2p text-center max-md:text-[12px]">loujvaughn@gmail.com</h2>
 
                 <div className="flex justify-center gap-12 absolute bottom-20 w-full">
@@ -35,6 +32,15 @@ const Contact = () => {
                         rel="noopener noreferrer"
                         className="github-button pixel-button sprite"
                     ></a>
+
+                    <a
+                        href="src/assets/LouVaughn_Resume.pdf"
+                        download
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="resume-button pixel-button sprite"
+                    ></a>
+
                 </div>
 
                 

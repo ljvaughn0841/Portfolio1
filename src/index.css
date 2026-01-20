@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: rgb(177, 29, 29);
+  background-color: #050816;  /* rgb(177, 29, 29) for testing */
   color: white;
 }
 
@@ -207,6 +207,11 @@ body:has(.card[data-color="green"]:hover) {
   background-image: url('../assets/github_button.png');
 }
 
+.resume-button.pixel-button{
+  background-image: url('../assets/resume_button.png');
+}
+
+
 /* Hover state */
 .pixel-button:hover {
   background-position: -32px; /* Shift to the second frame in the spritesheet */
@@ -234,7 +239,7 @@ body:has(.card[data-color="green"]:hover) {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
-  background-image: linear-gradient(#151030, #050816)
+  background-image: linear-gradient(#151030, #050816);
 }
 
 @media (max-width: 767px){
