@@ -239,7 +239,8 @@ body:has(.card[data-color="green"]:hover) {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
-  background-image: url('assets/hero_bg_texture.png');
+  background-image: url('assets/hero_bg_lower_res.png');
+  background-size: cover;
 }
 
 @media (max-width: 767px){
