@@ -7,6 +7,7 @@ import "../index.css";
 import silver from "../assets/skill_box_silver.png";
 import gold from "../assets/skill_box_gold.png";
 import bronze from "../assets/skill_box_bronze.png";
+import frameBG from "../assets/frameBG.png";
 
 
 const skill_boxes = [
@@ -40,7 +41,7 @@ const Skills = () => {
                             </div>
                             <p className="mb-6 text-[clamp(0.75rem,4vw,1.25rem)] tiny5-regular">{item.text}</p>
                         </div>
-                        <div className="absolute top-0 left-0 w-full h-full z-0">
+                        <div className="absolute top-0 left-0 w-full h-full z-0 sprite" style={{backgroundImage: `url(${frameBG})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}>
                         <SpriteSheet
                             image={skill_boxes[idx]}
                             widthFrame={45}
