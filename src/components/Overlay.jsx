@@ -18,7 +18,7 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                 >
                     &times;
                 </button>
-                <h2 className="silkscreen-bold text-[30px] mb-4">{selectedProject.name}</h2>
+                <h2 className="silkscreen-bold text-[30px] max-md:text-[24px] mb-4">{selectedProject.name}</h2>
                 <p className="tiny5-regular text-[20px] mb-4">{selectedProject.description}</p>
 
                 {/* Slider */}

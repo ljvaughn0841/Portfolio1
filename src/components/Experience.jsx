@@ -49,7 +49,7 @@ const Experience = () => {
                 <img src ={ljv_logo} className="rounded-full scale-[30%] sprite"></img>
                 <span className="timeline-left-arrow"></span>
                     <div className="text-box">
-                        <h2 className="silkscreen-regular text-[30px]">Freelance Developer</h2>
+                        <h2 className="silkscreen-regular text-[30px] max-md:text-[24px]">Freelance Developer</h2>
                         <small className="tiny5-regular text-[20px]">2024 - Current</small>
                         <p className="start2p md:leading-5 -indent-8 pl-8 max-[1200px]:text-[13px] text-[14px] max-sm:hidden">
                             <li>Designed and developed responsive websites to enhance user experience and functionality.</li>
@@ -64,16 +64,10 @@ const Experience = () => {
                     <img src={spigot_logo} className="rounded-full scale-[30%]" alt="Spigot Logo" />
                     <span className="timeline-right-arrow"></span>
                     <div className="text-box">
-                        <h2 className="silkscreen-regular text-[30px]">Spigot</h2>
+                        <h2 className="silkscreen-regular text-[30px] max-md:text-[24px]">Spigot</h2>
                         <small className="tiny5-regular text-[20px]">2023 - 2024</small>
                         <p className="start2p md:leading-5 -indent-8 pl-8 max-[1200px]:text-[13px] text-[14px] max-sm:hidden">
                         <li>Led android development to modify and rebrand the open-source browser Chromium into a mobile port of the Wave Browser app on desktop.</li>
-                        <br />
-                        <li>Conducted extensive research into the Chromium Project, one of the largest open-source repositories on GitHub, to identify areas of interest for development.</li>
-                        <br />
-                        <li  className="max-md:hidden">Implemented a JNI bridge to access resources and code used in the desktop application.</li>
-                        <br />
-                        <li  className="max-md:hidden">Diagnosed and resolved 18 critical bugs to ensure seamless integration between git repositories.</li>
                         </p>
                     </div>
                 </div>
