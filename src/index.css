@@ -418,10 +418,10 @@ h1 {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-/* Looks good in overlay but not on the multifilters (because of color change)
-.button:hover {
-  background: #241c4d;
-} */
+ /* Looks good in overlay but not on the multifilters (because of color change) */
+.button_hover:hover {
+  background: #6357b3;
+} 
 
 .active {
   background-color: #6357b3;
