@@ -413,7 +413,7 @@ h1 {
 .button {
   border: 3px solid #000;
   background: #221a4e;
-  margin: 5px 5px;
+  margin: 5px 0px;
   padding: 5px 10px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;

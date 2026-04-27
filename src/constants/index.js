@@ -79,6 +79,17 @@ import tumor from "../assets/tumor.png";
   }
   ];
 
+export const TAG_COLORS = {
+  Python:  { bg: "#3B5BA5", text: "#E8F0FF" },
+  MySQL:   { bg: "#00617A", text: "#D0F4FF" },
+  Java:    { bg: "#B07219", text: "#FFF3DC" },
+  "C++":   { bg: "#6B4FBB", text: "#EDE8FF" },
+  React:   { bg: "#20232A", text: "#61DAFB" },
+  Gephi:   { bg: "#1A6B3C", text: "#C6FFE0" },
+  // Add more tags here — they'll automatically appear in the dropdown
+};
+
+
   export const projects = [
     {
       name: "Wave Browser for Mobile",
@@ -104,6 +115,7 @@ import tumor from "../assets/tumor.png";
       image: solarroof,
       source_code_link: "https://github.com/jtran6796/Efficient-Energy",
       external_link: "https://devpost.com/software/wattareyoudoing",
+      tags: ["Python", "Streamlit", "Google APIs", "Data Analytics"],
     },
     {
       name: "Trade Network Analysis",

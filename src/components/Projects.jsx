@@ -66,14 +66,16 @@ const Projects = () => {
             <h1 className="text-center lg:mb-10 silkscreen-bold text-3xl sm:text-5xl lg:text-6xl leading-tight break-words">
                 Projects
             </h1>
-            <div className="featured_project_section w-full flex flex-col lg:flex-row items-center lg:items-start justify-between gap-0 overflow-hidden">
+            <div className="featured_project_section w-full flex flex-col lg:flex-row items-center lg:items-start justify-between gap-0 overflow-hidden">      
+                {/* Featured Project Section FOR DESKTOP */}
                 <div className="hidden lg:flex lg:flex-col lg:items-start lg:justify-center lg:max-w-[500px]">
-                    <p className="start2p text-[24px] leading-12 max-w-[500px]">
-                        Here are some of the awesome projects I&#39;ve worked on!
-                    </p>
+                    <p className="start2p text-white text-lg sm:text-2xl pt-8 pb-1">
+                    Featured Projects
+                    </p>  
                     <p className="start2p text-[14px] leading-12 max-w-[500px] mt-6">
-                        Check out my featured project, or use the filters to find something else that interests you
+                        Check out a featured project, or use the explorer to find something else that interests you
                     </p>
+                    {/* Featured Wave Browser FOR DESKTOP */}
                     <div className="mt-8 flex flex-col items-start gap-4">
                         <button
                             className="hidden lg:inline-flex px-12 py-4 bg-[#221a4e] border-[3px] border-[#000] text-white hover:bg-[#6357b3] transition-all duration-300 silkscreen-regular whitespace-nowrap"
@@ -84,11 +86,15 @@ const Projects = () => {
                                 openOverlay(waveBrowserProject);
                             }}
                         >
-                            Featured Project
+                            Wave Browser for Mobile
                         </button>
                         <img src={arrow} alt="Pointer" className="sprite hidden lg:block w-[220px] max-w-full scale-y-[-100%] ml-20" />
                     </div>
                 </div>
+                {/* Featured Section FOR MOBILE */}
+                <p className="start2p text-white text-lg pt-8 pb-1 lg:hidden text-center">
+                    Featured Projects
+                </p>
                 <div ref={myRef} className="phone_reveal relative mx-auto lg:mx-0 lg:ml-auto lg:mr-0 lg:mb-0">
                     <SpriteSheet
                         image={phone_reveal}
@@ -115,7 +121,7 @@ const Projects = () => {
                         openOverlay(waveBrowserProject);
                     }}
                 >
-                    Featured Project
+                    Wave Browser for Mobile
                 </button>
             </div>
 
