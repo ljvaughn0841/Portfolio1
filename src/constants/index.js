@@ -98,6 +98,7 @@ export const TAG_COLORS = {
       category: 'Software',
       image: wave,
       external_link: "https://wavebrowser.com/",
+      tags: ["C++", "Java"],
     },
     {
       name: "ForeSight",
@@ -106,6 +107,7 @@ export const TAG_COLORS = {
       category: 'Software',
       image: foresight,
       source_code_link: "https://github.com/ljvaughn0841/ForeSight-FGCU",
+      tags: ["Python", "OpenCV", "PyTorch"],
     },
     {
       name: "KnightHacks VII Winner - Watt Are You Doing?",
@@ -115,7 +117,7 @@ export const TAG_COLORS = {
       image: solarroof,
       source_code_link: "https://github.com/jtran6796/Efficient-Energy",
       external_link: "https://devpost.com/software/wattareyoudoing",
-      tags: ["Python", "Streamlit", "Google APIs", "Data Analytics"],
+      tags: ["Python", "Streamlit", "Google APIs"],
     },
     {
       name: "Trade Network Analysis",
@@ -124,6 +126,7 @@ export const TAG_COLORS = {
       category:'Data Analytics',
       image: tradenetwork1,
       // external_link: "WIP",
+      tags: ["Python", "Gephi"],
     },
     {
       name: "Tumor Detection and Classification with Vision Transformers",
@@ -132,5 +135,6 @@ export const TAG_COLORS = {
       category:'Data Analytics',
       image: tumor,
       // external_link: "WIP",
+      tags: ["Python", "PyTorch"],
     },
   ];

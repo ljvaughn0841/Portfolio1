@@ -9,10 +9,12 @@ import Navbar from "./components/NavBar";
 import Hero from "./components/Hero";
 import Experience from "./components/Experience";
 
+import PixelBackground from "./components/PixelBackground";
 
 const App = () => {
   return (
     <BrowserRouter>
+    <PixelBackground />
       <div className="z-0 w-full h-full">
         <div className="bg-cover bg-no-repeat bg-center z-10">
           <Navbar />

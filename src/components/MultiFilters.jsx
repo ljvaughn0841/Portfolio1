@@ -25,7 +25,7 @@ function TagPill({ tag, removable, onRemove }) {
     const colors = (TAG_COLORS || {})[tag] || DEFAULT_TAG_COLOR;
     return (
         <span
-            className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-mono font-semibold"
+            className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-mono font-semibold"
             style={{ backgroundColor: colors.bg, color: colors.text }}
         >
             {tag}
@@ -49,7 +49,7 @@ export default function MultiFilters({ openOverlay }) {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const dropdownRef = useRef(null);
 
-    const filters = ["Software", "Graphics", "Data Analytics"];
+    const filters = ["Software", "Data Analytics", "Creative Work"];
 
     const handleFilterButtonClick = (selectedCategory) => {
         if (selectedFilters.includes(selectedCategory)) {
@@ -99,7 +99,7 @@ export default function MultiFilters({ openOverlay }) {
     const tagsNotSelected = allTags.filter((t) => !selectedTags.includes(t));
 
     return (
-        <div className="bg-black-100 rounded-xl relative z-0 mt-12">
+        <div className="bg-black-200 relative z-0 mt-12 pb-12 pl-5 pr-5 border-4 border-white/10 border-b-8 border-r-8">
             {/* Title */}
             <p className="start2p text-white text-lg sm:text-3xl px-2 pt-8 pb-1 text-center">
                 Project Explorer
@@ -130,7 +130,7 @@ export default function MultiFilters({ openOverlay }) {
                 >
                     <span>Technologies</span>
                     {selectedTags.length > 0 && (
-                        <span className="bg-white/20 text-white text-xs rounded-full px-1.5 py-0.5 leading-none">
+                        <span className="bg-white/20 text-white text-xs px-1.5 py-0.5 leading-none">
                             {selectedTags.length}
                         </span>
                     )}
@@ -138,12 +138,12 @@ export default function MultiFilters({ openOverlay }) {
                         className={`w-3 h-3 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
                         fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        <path strokeLinecap="square" strokeLinejoin="square" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
 
                 {dropdownOpen && (
-                    <div className="absolute left-0 mt-1 w-56 bg-[#1a1a2e] border border-white/10 rounded-xl shadow-xl z-50 p-3 flex flex-col gap-2">
+                    <div className="absolute left-0 mt-1 w-56 bg-[#1a1a2e] border border-white/10 shadow-xl z-50 p-3 flex flex-col gap-2">
                         {selectedTags.length > 0 && (
                             <div className="flex flex-wrap gap-1.5 pb-2 border-b border-white/10">
                                 {selectedTags.map((tag) => (
@@ -175,12 +175,12 @@ export default function MultiFilters({ openOverlay }) {
             </div>
             </div>
 
-            <div className="projects_container flex flex-wrap gap-7 justify-center">
+            <div className="flex flex-wrap gap-7 justify-center">
                 {filteredItems.length > 0 ? (
                     filteredItems.map((item, idx) => (
                         <div
                             key={`items-${idx}`}
-                            className="item bg-tertiary p-5 rounded-2xl sm:max-w-[360px] w-full mb-5 cursor-pointer"
+                            className="item bg-tertiary p-5 sm:max-w-[340px] w-full mb-5 cursor-pointer"
                             onClick={() => openOverlay(item)}
                         >
                             <img src={item.image} alt={item.name} style={{ aspectRatio: "11/8" }} />
