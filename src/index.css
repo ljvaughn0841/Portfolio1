@@ -258,6 +258,28 @@ body:has(.card[data-color="green"]:hover) {
   }
 }
 
+.overlay-content {
+  max-height: min(90vh, 860px);
+  overflow-y: auto;
+}
+
+.overlay-image-frame {
+  touch-action: pan-y;
+}
+
+.overlay-nav-button {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.overlay-nav-button:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+.overlay-nav-button:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
 
 .sprite {
   background-size: cover;
@@ -450,7 +472,10 @@ h1 {
 
 .overlay-content {
   background: #151030;
-  padding: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border-radius: 8px;
   max-width: 800px;
   width: 90%;
@@ -459,7 +484,7 @@ h1 {
   max-height: 97.5%; /* Limit height to 97.5% of the screen. This adds some whitespace at bottom of overlay. */
 }
 
-.overlay-content button {
+.overlay-content closebutton {
   position: absolute;
   top: 1rem;
   right: 1rem;
