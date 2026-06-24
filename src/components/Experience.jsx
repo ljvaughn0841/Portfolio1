@@ -85,8 +85,8 @@ const Experience = () => {
                     <img src={spigot_logo} className="rounded-full scale-[30%]" alt="Spigot Logo" />
                     <span className="timeline-right-arrow"></span>
                     <div className="text-box">
-                        <h2 className="silkscreen-regular text-[30px] max-md:text-[24px]">Spigot</h2>
-                        <small className="tiny5-regular text-[20px]">(Now Eightpoint)<br />2023 - 2024</small>
+                        <h2 className="silkscreen-regular text-[30px] max-md:text-[24px]">Android Dev Intern</h2>
+                        <small className="tiny5-regular text-[20px]">Spigot (Now Eightpoint)<br />2023 - 2024</small>
                         <p className="start2p md:leading-5 -indent-8 pl-8 max-[1200px]:text-[13px] text-[14px] max-sm:hidden">
                         <li>Led android development to modify and rebrand the open-source browser Chromium into a mobile port of the Wave Browser app on desktop.</li>
                         </p>

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import arrow2 from "../assets/arrow2.png";
+import { TAG_COLORS } from "../constants";
+
+const DEFAULT_TAG_COLOR = { bg: "#3a3a4a", text: "#ccccdd" };
 
 const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
     const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -46,7 +49,7 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
 
     return (
         <div className="overlay fixed inset-0 bg-black/75 flex justify-center items-center z-50 px-4 py-6">
-            <div className="overlay-content bg-tertiary rounded-lg relative max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="overlay-content bg-tertiary relative max-w-3xl w-full max-h-[90vh] overflow-y-auto">
                 <button
                     type="button"
                     className="absolute top-4 right-4 text-white text-2xl font-bold leading-none closebutton"
@@ -56,12 +59,30 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                     &times;
                 </button>
                 <h2 className="silkscreen-bold text-[30px] max-md:text-[24px] mb-4 pr-8">{selectedProject.name}</h2>
-                <p className="tiny5-regular text-[20px] mb-4">{selectedProject.description}</p>
+                
+                <p className="start2p text-[12px] mb-4">{selectedProject.description}</p>
+
+                {selectedProject.tags?.length > 0 && (
+                    <div className="mb-4 flex flex-wrap gap-2">
+                        {selectedProject.tags.map((tag) => {
+                            const colors = (TAG_COLORS || {})[tag] || DEFAULT_TAG_COLOR;
+                            return (
+                                <span
+                                    key={tag}
+                                    className="inline-flex items-center px-2 py-0.5 text-xs font-mono font-semibold"
+                                    style={{ backgroundColor: colors.bg, color: colors.text }}
+                                >
+                                    {tag}
+                                </span>
+                            );
+                        })}
+                    </div>
+                )}
 
                 {images.length > 0 && (
                     <div className="mb-4">
                         <div
-                            className="overlay-image-frame relative mx-auto overflow-hidden rounded-lg bg-black/60"
+                            className="overlay-image-frame relative mx-auto overflow-hidden bg-black/60"
                             onTouchStart={handleTouchStart}
                             onTouchEnd={handleTouchEnd}
                         >
@@ -69,7 +90,7 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                                 <img
                                     src={images[activeImageIndex]}
                                     alt={`${selectedProject.name} screenshot ${activeImageIndex + 1}`}
-                                    className="h-full w-full object-contain rounded-lg"
+                                    className="h-full w-full object-contain"
                                 />
 
                                 {showImageNavigation && (
@@ -108,7 +129,7 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                                             style={{ position: "static" }}
                                             onClick={() => setActiveImageIndex(idx)}
                                             aria-label={`Go to image ${idx + 1}`}
-                                            className={`transition-all duration-300 ${isActive ? "h-2.5 w-8 rounded-sm bg-white" : "h-2.5 w-2.5 rounded-sm bg-white/40 hover:bg-white/70"}`}
+                                            className={`transition-all duration-300 ${isActive ? "h-2.5 w-8 bg-white" : "h-2.5 w-2.5 bg-white/40 hover:bg-white/70"}`}
                                         />
                                     );
                                 })}
@@ -150,6 +171,7 @@ Overlay.propTypes = {
         image2: PropTypes.string,
         image3: PropTypes.string,
         images: PropTypes.arrayOf(PropTypes.string),
+        tags: PropTypes.arrayOf(PropTypes.string),
         source_code_link: PropTypes.string,
         external_link: PropTypes.string,
     }).isRequired,

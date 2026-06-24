@@ -133,7 +133,7 @@ export const TAG_COLORS = {
       tags: ["Python", "Gephi"],
     },
     {
-      name: "Tumor Detection and Classification with Vision Transformers",
+      name: "Tumor Detection and Classification with ViT",
       description:
         "I fine-tuned a Vision Transformer (ViT) model to detect and classify brain tumors in MRI scans, achieving 80% test accuracy on a medical imaging dataset. To improve stability and performance with limited labeled data, I applied progressive unfreezing during training to gradually fine-tune deeper layers of the model. The project was implemented using Python, Hugging Face, PyTorch, and CUDA.",
       category:'Data Analytics',
