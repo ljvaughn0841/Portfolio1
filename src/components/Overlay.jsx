@@ -60,25 +60,6 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                 </button>
                 <h2 className="silkscreen-bold text-[30px] max-md:text-[24px] mb-4 pr-8">{selectedProject.name}</h2>
                 
-                <p className="start2p text-[12px] mb-4">{selectedProject.description}</p>
-
-                {selectedProject.tags?.length > 0 && (
-                    <div className="mb-4 flex flex-wrap gap-2">
-                        {selectedProject.tags.map((tag) => {
-                            const colors = (TAG_COLORS || {})[tag] || DEFAULT_TAG_COLOR;
-                            return (
-                                <span
-                                    key={tag}
-                                    className="inline-flex items-center px-2 py-0.5 text-xs font-mono font-semibold"
-                                    style={{ backgroundColor: colors.bg, color: colors.text }}
-                                >
-                                    {tag}
-                                </span>
-                            );
-                        })}
-                    </div>
-                )}
-
                 {images.length > 0 && (
                     <div className="mb-4">
                         <div
@@ -94,7 +75,7 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                                 />
 
                                 {showImageNavigation && (
-                                    <>
+                                    <div className="hidden sm:block">
                                         <button
                                             type="button"
                                             className="overlay-nav-button flex h-11 w-11 items-center justify-center rounded-full bg-black/60 p-2 shadow-lg transition"
@@ -113,7 +94,7 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                                         >
                                             <img src={arrow2} alt="Next" className="h-full w-full object-contain" />
                                         </button>
-                                    </>
+                                    </div>
                                 )}
                             </div>
                         </div>
@@ -137,6 +118,25 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                         )}
                     </div>
                 )}
+                <p className="start2p text-[12px] mb-4">{selectedProject.description}</p>
+
+                {selectedProject.tags?.length > 0 && (
+                    <div className="mb-4 flex flex-wrap gap-2">
+                        {selectedProject.tags.map((tag) => {
+                            const colors = (TAG_COLORS || {})[tag] || DEFAULT_TAG_COLOR;
+                            return (
+                                <span
+                                    key={tag}
+                                    className="inline-flex items-center px-2 py-0.5 text-xs font-mono font-semibold"
+                                    style={{ backgroundColor: colors.bg, color: colors.text }}
+                                >
+                                    {tag}
+                                </span>
+                            );
+                        })}
+                    </div>
+                )}
+
 
                 {selectedProject.source_code_link && (
                     <a
