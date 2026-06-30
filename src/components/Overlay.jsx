@@ -49,7 +49,7 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
 
     return (
         <div className="overlay fixed inset-0 bg-black/75 flex justify-center items-center z-50 px-4 py-6">
-            <div className="overlay-content bg-tertiary relative max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="overlay-content bg-tertiary relative max-w-3xl w-full max-h-[90vh] overflow-y-auto border-8 border-t-white/10 border-l-white/10 border-b-black-100 border-r-black-100 rounded-none">
                 <button
                     type="button"
                     className="absolute top-4 right-4 text-white text-2xl font-bold leading-none closebutton"

@@ -99,7 +99,8 @@ export default function MultiFilters({ openOverlay }) {
     const tagsNotSelected = allTags.filter((t) => !selectedTags.includes(t));
 
     return (
-        <div className="bg-black-200 relative z-0 mt-12 pb-12 pl-5 pr-5 border-4 border-white/10 border-b-8 border-r-8">
+        <div className="bg-black-200 relative z-0 mt-12 pb-12 pl-5 pr-5
+            border-4 border-t-white/10 border-l-white/10 border-b-black-200 border-r-black-200 rounded-none">
             {/* Title */}
             <p className="start2p text-white text-lg sm:text-3xl px-2 pt-8 pb-1 text-center">
                 Project Explorer
@@ -180,7 +181,7 @@ export default function MultiFilters({ openOverlay }) {
                     filteredItems.map((item, idx) => (
                         <div
                             key={`items-${idx}`}
-                            className="item bg-tertiary p-5 sm:max-w-[340px] w-full mb-5 cursor-pointer"
+                            className="item bg-tertiary p-5 sm:max-w-[340px] w-full mb-5 cursor-pointer border-4 border-t-white/10 border-l-white/10 border-b-black-100 border-r-black-100 rounded-none"
                             onClick={() => openOverlay(item)}
                         >
                             <img src={item.image} alt={item.name} style={{ aspectRatio: "11/8" }} />
