@@ -34,6 +34,9 @@ import foresight from "../assets/foresight_project.png";
 import solarroof from "../assets/solarroof.png";
 import tradenetwork1 from "../assets/trade_network1.png";
 import tumor from "../assets/tumor.png";
+import fontinator from "../assets/fontinator.png";
+import fontinator_logo from "../assets/fontinator_logo.jpg";
+import font_network from "../assets/font_network.png"
 
   export const navLinks = [
     {
@@ -91,15 +94,49 @@ export const TAG_COLORS = {
 
 
   export const projects = [
+    /*
+    {
+    name: "Example Project",
+    description: `Very cool project. Very cool stuff`,
+    category: 'Software', 'Data Analytics',  # choose a category
+    image: main_image_on_explorer,
+    images: [image1, image2, image3],
+    external_link: "link",
+    source_code_link: "link",
+    tags: ['tag1', 'tag2']
+    },
+    */
     {
       name: "Wave Browser for Mobile",
       description:
-        "For my capstone project at FGCU our team worked on developing a port of Spigots (Now Eightpoint's) Wave Browser applications for both Android and iOS devices for our senior group project. Our project focused on rebranding the open-source Chromium browser and integrating Wave Browsers search engine for mobile devices.",
+        `For my capstone project at FGCU our team worked on developing a port of Spigots (Now Eightpoint's)
+          Wave Browser applications for both Android and iOS devices for our senior group project.
+
+          I focused on and led the Android development for this project. 
+          This project focused on redesigning the open-source Chromium browser (one of the largest repositories on GitHub)
+          and integrating Wave Browsers search engine for mobile devices.`,
       category: 'Software',
       image: wave,
-      images: [wave, foresight, tradenetwork1],
+      images: [wave],
       external_link: "https://wavebrowser.com/",
       tags: ["C++", "Java"],
+    },
+        {
+      name: "Script Gap",
+      description:
+        `
+        The Script Gap is a research project that helps to quantitatively identify scripts in need of more typographic development.
+        We found that even though only 56% of the top 10 million websites support Latin, 74.4% of the fonts we found on these websites had support Latin.
+        This basically means that Latin dominates typography even though there are hundereds of millions of people that read and write in other scripts.
+        Our project aims to help type foundries in decision making for what scripts are in need of support based on the online demand as well as many other factors. 
+        `,
+      category:'Data Analytics',
+      image: font_network,
+      images: [font_network],
+      // TODO: This will change in the future when the repo has been moved to the Lab this needs to be updated
+      source_code_link: "https://github.com/Aditya-Khadye/TheScriptGap",
+      external_link: "https://aditya-khadye.github.io/TheScriptGap/",
+      tags: ["Python", "BigQuery"],
     },
     {
       name: "ForeSight",
@@ -139,6 +176,20 @@ export const TAG_COLORS = {
       category:'Data Analytics',
       image: tumor,
       images: [tumor],
+      // external_link: "WIP",
+      tags: ["Python", "PyTorch"],
+    },
+    {
+      name: "The Fontinator",
+      description:
+        `
+        The fontinator is a new way for designers to search through a large number of fonts in a more visual way.
+        It allows designers to have fine control over the attributes their looking for in a font so that they can 
+        reach their desired font much faster than they would be able to by using the modern method of filter boxes and infinite scrolling.
+        `,
+      category:'Data Analytics',
+      image: fontinator,
+      images: [fontinator, fontinator_logo],
       // external_link: "WIP",
       tags: ["Python", "PyTorch"],
     },
