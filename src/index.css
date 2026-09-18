@@ -452,7 +452,353 @@ h1 {
   background-color: #6357b3;
   color: #000000;
 }
+/* ==========================================
+   ENHANCED PROJECT EXPLORER STYLING
+   Add these to your index.css file
+   ========================================== */
 
+/* Hover-only utilities for devices that support hover */
+/* These prevent hover effects from getting stuck on touch devices */
+@media (hover: hover) {
+  /* Scale utilities */
+  .hover-device\:hover\:scale-95:hover {
+    transform: scale(0.95);
+  }
+  
+  .hover-device\:hover\:scale-105:hover {
+    transform: scale(1.05);
+  }
+  
+  .hover-device\:hover\:scale-110:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Brightness utilities */
+  .hover-device\:hover\:brightness-125:hover {
+    filter: brightness(1.25);
+  }
+  
+  .hover-device\:hover\:brightness-150:hover {
+    filter: brightness(1.5);
+  }
+  
+  /* Shadow utilities */
+  .hover-device\:hover\:shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgba(99, 87, 179, 0.3);
+  }
+  
+  .hover-device\:hover\:shadow-md:hover {
+    box-shadow: 0 4px 6px -1px rgba(99, 87, 179, 0.4);
+  }
+  
+  .hover-device\:hover\:shadow-2xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(99, 87, 179, 0.5);
+  }
+  
+  .hover-device\:hover\:shadow-\[\#6357b3\]\/40:hover {
+    box-shadow: 0 10px 15px -3px rgba(99, 87, 179, 0.4);
+  }
+  
+  .hover-device\:hover\:shadow-\[\#6357b3\]\/50:hover {
+    box-shadow: 0 25px 50px -12px rgba(99, 87, 179, 0.5);
+  }
+  
+  /* Color utilities */
+  .hover-device\:hover\:text-\[\#6357b3\]:hover {
+    color: #6357b3;
+  }
+  
+  .hover-device\:hover\:text-white\/80:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .hover-device\:hover\:border-opacity-100:hover {
+    border-opacity: 1;
+  }
+  
+  .hover-device\:hover\:opacity-100:hover {
+    opacity: 1;
+  }
+  
+  /* Group hover utilities for parent-child interactions */
+  .hover-device\:group-hover\:scale-110:hover {
+    transform: scale(1.1);
+  }
+  
+  .hover-device\:group-hover\:text-\[\#6357b3\]:hover {
+    color: #6357b3;
+  }
+}
+
+/* Button Enhancements */
+.button {
+  border: 3px solid #000;
+  background: #221a4e;
+  margin: 5px 0px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(99, 87, 179, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .button::before:hover {
+    opacity: 1;
+  }
+  
+  .button:hover:not(.active) {
+    border-color: #6357b3;
+  }
+}
+
+.button.active {
+  background-color: #6357b3;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(99, 87, 179, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.1);
+  border-color: #8575d9;
+}
+
+/* Project Card Enhancements */
+.item {
+  position: relative;
+  overflow: hidden;
+}
+
+.item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(99, 87, 179, 0.1) 0%, rgba(99, 87, 179, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (hover: hover) {
+  .item:hover::before {
+    opacity: 1;
+  }
+
+  .item img {
+    transition: transform 0.3s ease;
+  }
+
+  .item:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* Project Explorer Container */
+.projects-explorer {
+  position: relative;
+}
+
+.projects-explorer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 87, 179, 0.3), transparent);
+  pointer-events: none;
+}
+
+/* Tag Pill Enhancements */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  font-family: monospace;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+/* Dropdown Enhancement */
+.dropdown-menu {
+  animation: slideInDown 0.2s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow Effects */
+.glow-text {
+  text-shadow: 0 0 8px rgba(99, 87, 179, 0.4);
+}
+
+.glow-border {
+  box-shadow: 0 0 12px rgba(99, 87, 179, 0.3);
+}
+
+/* Smooth Transitions */
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Pixel Art Borders */
+.pixel-border {
+  border: 3px solid #000;
+  box-shadow: 
+    3px 3px 0px rgba(0, 0, 0, 0.3),
+    6px 6px 0px rgba(99, 87, 179, 0.2);
+}
+
+.pixel-border:hover {
+  box-shadow: 
+    5px 5px 0px rgba(0, 0, 0, 0.3),
+    10px 10px 0px rgba(99, 87, 179, 0.3);
+  transform: translate(-2px, -2px);
+}
+
+/* Active State Feedback */
+.button:active {
+  transform: scale(0.98);
+}
+
+.item:active {
+  transform: scale(0.98);
+}
+
+/* Filter Counter Badge */
+.filter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.4rem;
+  background: rgba(99, 87, 179, 0.4);
+  border: 1px solid rgba(99, 87, 179, 0.6);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* No Results Message */
+.no-results {
+  width: 100%;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: "Silkscreen", serif;
+}
+
+/* Animation for Project Cards appearing */
+.item {
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation for multiple cards - cards stay invisible during delay */
+.item:nth-child(1) { animation-delay: 0.05s; }
+.item:nth-child(2) { animation-delay: 0.1s; }
+.item:nth-child(3) { animation-delay: 0.15s; }
+.item:nth-child(4) { animation-delay: 0.2s; }
+.item:nth-child(5) { animation-delay: 0.25s; }
+.item:nth-child(n+6) { animation-delay: 0.3s; }
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+  .button {
+    padding: 6px 8px;
+    font-size: 10px;
+    margin: 4px 0px;
+  }
+
+  .buttons_container {
+    padding-left: 0;
+    padding-right: 0;
+    gap: 0.25rem;
+  }
+
+  .item {
+    max-width: 100%;
+    padding: 4px;
+  }
+
+  .item img {
+    max-width: 100%;
+  }
+
+  .pixel-border {
+    box-shadow: 
+      2px 2px 0px rgba(0, 0, 0, 0.3),
+      4px 4px 0px rgba(99, 87, 179, 0.2);
+  }
+
+  @media (hover: hover) {
+    .pixel-border:hover {
+      box-shadow: 
+        2px 2px 0px rgba(0, 0, 0, 0.3),
+        4px 4px 0px rgba(99, 87, 179, 0.2);
+      transform: translate(-1px, -1px);
+    }
+  }
+}
+
+/* Small devices (extra small) */
+@media (max-width: 375px) {
+  .button {
+    padding: 5px 6px;
+    font-size: 9px;
+    margin: 3px 0px;
+  }
+
+  .buttons_container {
+    gap: 0.125rem;
+  }
+
+  .start2p {
+    font-size: 14px !important;
+  }
+
+  .item {
+    padding: 3px;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Dark mode adjustments (already in dark) */
+.dark {
+  --shadow-color: rgba(99, 87, 179, 0.2);
+  --glow-color: rgba(99, 87, 179, 0.4);
+}
 
 /* Overlay Styles */
 
