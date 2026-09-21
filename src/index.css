@@ -452,10 +452,6 @@ h1 {
   background-color: #6357b3;
   color: #000000;
 }
-/* ==========================================
-   ENHANCED PROJECT EXPLORER STYLING
-   Add these to your index.css file
-   ========================================== */
 
 /* Hover-only utilities for devices that support hover */
 /* These prevent hover effects from getting stuck on touch devices */
@@ -592,12 +588,21 @@ h1 {
     opacity: 1;
   }
 
+  .item:hover {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
   .item img {
     transition: transform 0.3s ease;
   }
 
   .item:hover img {
     transform: scale(1.05);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
   }
 }
 

@@ -22,7 +22,7 @@ function TagPill({ tag, removable, onRemove }) {
     const colors = (TAG_COLORS || {})[tag] || DEFAULT_TAG_COLOR;
     return (
         <span
-            className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono font-semibold border-2 border-opacity-40 transition-all duration-200 hover-device:hover:scale-110 hover-device:hover:border-opacity-100"
+            className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-mono font-semibold border-2 border-opacity-40 transition-all duration-200 hover-device:hover:border-opacity-100"
             style={{ 
                 backgroundColor: colors.bg, 
                 color: colors.text,
@@ -47,11 +47,16 @@ export default function MultiFilters({ openOverlay }) {
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [selectedTags, setSelectedTags] = useState([]);
     const [filteredItems, setFilteredItems] = useState(projects);
+    const [isMobile, setIsMobile] = useState(() =>
+        typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches
+    );
+    const [visibleCount, setVisibleCount] = useState(isMobile ? 4 : 6);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
     const dropdownRef = useRef(null);
 
     const filters = ["Software", "Data Analytics", "Creative Work"];
+    const projectsPerBatch = isMobile ? 4 : 6;
 
     const handleFilterButtonClick = (selectedCategory) => {
         if (selectedFilters.includes(selectedCategory)) {
@@ -79,8 +84,20 @@ export default function MultiFilters({ openOverlay }) {
     }, []);
 
     useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 767px)");
+        const handleMediaChange = (e) => {
+            setIsMobile(e.matches);
+            setVisibleCount(e.matches ? 4 : 6);
+        };
+
+        mediaQuery.addEventListener("change", handleMediaChange);
+        return () => mediaQuery.removeEventListener("change", handleMediaChange);
+    }, []);
+
+    useEffect(() => {
+        setVisibleCount(projectsPerBatch);
         filterItems();
-    }, [selectedFilters, selectedTags]);
+    }, [selectedFilters, selectedTags, projectsPerBatch]);
 
     const filterItems = () => {
         let result = [...projects];
@@ -170,7 +187,13 @@ export default function MultiFilters({ openOverlay }) {
                                         <button 
                                             key={tag} 
                                             onClick={() => handleTagToggle(tag)} 
-                                            className="opacity-60 hover:opacity-100 transition-all duration-200 transform hover:scale-110"
+                                            className="opacity-60 hover-device:hover:opacity-100 transition-all duration-200 transform hover-device:hover:scale-110"
+                                            style={{
+                                                WebkitFontSmoothing: 'antialiased',
+                                                WebkitBackfaceVisibility: 'hidden',
+                                                backfaceVisibility: 'hidden',
+                                                willChange: 'transform',
+                                            }}
                                         >
                                             <TagPill tag={tag} />
                                         </button>
@@ -197,7 +220,7 @@ export default function MultiFilters({ openOverlay }) {
             {/* Project Cards Grid */}
             <div className="flex flex-wrap gap-6 justify-center mt-6">
                 {filteredItems.length > 0 ? (
-                    filteredItems.map((item, idx) => (
+                    filteredItems.slice(0, visibleCount).map((item, idx) => (
                         <div
                             key={`items-${idx}`}
                             className="item bg-tertiary p-5 sm:max-w-[340px] w-full mb-3 cursor-pointer border-4 border-t-white/10 border-l-white/10 border-b-black-100 border-r-black-100 rounded-none transition-all duration-300 transform active:scale-95 group touch-none hover-device:hover:scale-105 hover-device:hover:shadow-2xl hover-device:hover:shadow-[#6357b3]/50"
@@ -213,16 +236,13 @@ export default function MultiFilters({ openOverlay }) {
                                     style={{ aspectRatio: "11/8" }}
                                     className="transition-transform duration-300 hover-device:group-hover:scale-110"
                                 />
-                                {hoveredCardIndex === idx && (
-                                    <div className="absolute inset-0 bg-[#6357b3]/20 pointer-events-none transition-opacity duration-300"></div>
-                                )}
                             </div>
 
                             {/* Card Content */}
                             <p className="silkscreen-regular text-white hover-device:group-hover:text-[#6357b3] transition-colors duration-300">
                                 {item.name}
                             </p>
-                            <p className="category tiny5-regular text-white/20 hover-device:group-hover:text-white/80 transition-colors duration-300">
+                            <p className="category tiny5-regular text-white/70 hover-device:group-hover:text-white/80 transition-colors duration-300">
                                 {item.category}
                             </p>
 
@@ -244,6 +264,27 @@ export default function MultiFilters({ openOverlay }) {
                     </div>
                 )}
             </div>
+
+            {(visibleCount < filteredItems.length || visibleCount > projectsPerBatch) && (
+                <div className="flex justify-center gap-3 mt-6">
+                    {visibleCount < filteredItems.length && (
+                        <button
+                            onClick={() => setVisibleCount((count) => count + projectsPerBatch)}
+                            className="button px-4 py-2 text-xs sm:text-sm transition-all duration-300 transform active:scale-95 hover-device:hover:brightness-150 hover-device:hover:shadow-md hover-device:hover:shadow-[#6357b3]/40 hover-device:hover:scale-105"
+                        >
+                            Show More
+                        </button>
+                    )}
+                    {visibleCount > projectsPerBatch && (
+                        <button
+                            onClick={() => setVisibleCount(projectsPerBatch)}
+                            className="button px-4 py-2 text-xs sm:text-sm transition-all duration-300 transform active:scale-95 hover-device:hover:brightness-150 hover-device:hover:shadow-md hover-device:hover:shadow-[#6357b3]/40 hover-device:hover:scale-105"
+                        >
+                            Show Less
+                        </button>
+                    )}
+                </div>
+            )}
         </div>
     );
 }

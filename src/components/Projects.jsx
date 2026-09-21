@@ -76,9 +76,9 @@ const Projects = () => {
                         Check out a featured project, or use the explorer to find something else that interests you
                     </p>
                     {/* Featured Wave Browser FOR DESKTOP */}
-                    <div className="mt-8 flex flex-col items-start gap-4">
+                    <div className="mt-8 flex flex-col items-start gap-4 ml-5">
                         <button
-                            className="hidden lg:inline-flex px-12 py-4 bg-[#221a4e] border-[3px] border-[#000] text-white hover:bg-[#6357b3] transition-all duration-300 silkscreen-regular whitespace-nowrap"
+                            className="hidden text-lg lg:inline-flex px-12 py-24 button silkscreen-regular whitespace-nowrap transition-all duration-300 transform hover-device:hover:scale-105 hover-device:hover:brightness-125 hover-device:hover:shadow-lg hover-device:hover:shadow-[#6357b3]/50 active:scale-95"
                             onClick={() => {
                                 const waveBrowserProject = projects.find(
                                     (project) => project.name === "Wave Browser for Mobile"
@@ -113,7 +113,7 @@ const Projects = () => {
                     />
                 </div>
                 <button
-                    className="lg:hidden mx-auto px-10 py-3 bg-[#221a4e] border-[3px] border-[#000] text-white hover:bg-[#6357b3] transition-all duration-300 silkscreen-regular whitespace-nowrap"
+                    className="lg:hidden mx-auto px-5 py-3 bg-[#221a4e] border-[3px] border-[#000] text-white hover:bg-[#6357b3] transition-all duration-300 silkscreen-regular whitespace-nowrap"
                     onClick={() => {
                         const waveBrowserProject = projects.find(
                             (project) => project.name === "Wave Browser for Mobile"

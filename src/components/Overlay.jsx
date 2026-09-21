@@ -50,15 +50,17 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
     return (
         <div className="overlay fixed inset-0 bg-black/75 flex justify-center items-center z-50 px-4 py-6">
             <div className="overlay-content bg-tertiary relative max-w-3xl w-full max-h-[90vh] overflow-y-auto border-8 border-t-white/10 border-l-white/10 border-b-black-100 border-r-black-100 rounded-none">
+                {/* Close Button - Enhanced */}
                 <button
                     type="button"
-                    className="absolute top-4 right-4 text-white text-2xl font-bold leading-none closebutton"
+                    className="absolute top-4 right-4 text-white text-2xl font-bold leading-none closebutton transition-all duration-300 hover-device:hover:scale-125 hover-device:hover:text-[#6357b3] active:scale-95"
                     onClick={closeOverlay}
                     aria-label="Close project overlay"
                 >
                     &times;
                 </button>
-                <h2 className="silkscreen-bold text-[30px] max-md:text-[24px] mb-4 pr-8">{selectedProject.name}</h2>
+
+                <h2 className="silkscreen-bold text-[30px] max-md:text-[24px] mb-4 pr-8 drop-shadow-[0_0_8px_rgba(99,87,179,0.3)]">{selectedProject.name}</h2>
                 
                 {images.length > 0 && (
                     <div className="mb-4">
@@ -76,18 +78,21 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
 
                                 {showImageNavigation && (
                                     <div className="hidden sm:block">
+                                        {/* Previous Button */}
                                         <button
                                             type="button"
-                                            className="overlay-nav-button flex h-11 w-11 items-center justify-center rounded-full bg-black/60 p-2 shadow-lg transition"
+                                            className="overlay-nav-button flex h-11 w-11 items-center justify-center rounded-full bg-black/60 p-2 shadow-lg transition-all duration-300 hover-device:hover:scale-110 hover-device:hover:shadow-xl hover-device:hover:shadow-[#6357b3]/40 hover-device:hover:bg-black/80 active:scale-95"
                                             style={{ position: "absolute", top: "50%", left: "0.75rem", transform: "translateY(-50%)" }}
                                             onClick={() => changeImage(-1)}
                                             aria-label="Show previous image"
                                         >
                                             <img src={arrow2} alt="Previous" className="h-full w-full object-contain rotate-180" />
                                         </button>
+
+                                        {/* Next Button */}
                                         <button
                                             type="button"
-                                            className="overlay-nav-button flex h-11 w-11 items-center justify-center rounded-full bg-black/60 p-2 shadow-lg transition"
+                                            className="overlay-nav-button flex h-11 w-11 items-center justify-center rounded-full bg-black/60 p-2 shadow-lg transition-all duration-300 hover-device:hover:scale-110 hover-device:hover:shadow-xl hover-device:hover:shadow-[#6357b3]/40 hover-device:hover:bg-black/80 active:scale-95"
                                             style={{ position: "absolute", top: "50%", right: "0.75rem", transform: "translateY(-50%)" }}
                                             onClick={() => changeImage(1)}
                                             aria-label="Show next image"
@@ -107,10 +112,9 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                                         <button
                                             key={idx}
                                             type="button"
-                                            style={{ position: "static" }}
                                             onClick={() => setActiveImageIndex(idx)}
                                             aria-label={`Go to image ${idx + 1}`}
-                                            className={`transition-all duration-300 ${isActive ? "h-2.5 w-8 bg-white" : "h-2.5 w-2.5 bg-white/40 hover:bg-white/70"}`}
+                                            className={`transition-all duration-300 ${isActive ? "h-2.5 w-8 bg-white shadow-md shadow-[#6357b3]/40" : "h-2.5 w-2.5 bg-white/40 hover-device:hover:bg-white/70 hover-device:hover:shadow-md hover-device:hover:shadow-[#6357b3]/30"}`}
                                         />
                                     );
                                 })}
@@ -118,8 +122,10 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                         )}
                     </div>
                 )}
+
                 <p className="start2p text-[12px] mb-4">{selectedProject.description}</p>
 
+                {/* Tags - Enhanced to match TagPill */}
                 {selectedProject.tags?.length > 0 && (
                     <div className="mb-4 flex flex-wrap gap-2">
                         {selectedProject.tags.map((tag) => {
@@ -127,8 +133,12 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                             return (
                                 <span
                                     key={tag}
-                                    className="inline-flex items-center px-2 py-0.5 text-xs font-mono font-semibold"
-                                    style={{ backgroundColor: colors.bg, color: colors.text }}
+                                    className="inline-flex items-center px-2.5 py-1 text-xs font-mono font-semibold border-2 border-opacity-40"
+                                    style={{ 
+                                        backgroundColor: colors.bg, 
+                                        color: colors.text,
+                                        borderColor: colors.text,
+                                    }}
                                 >
                                     {tag}
                                 </span>
@@ -137,27 +147,29 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                     </div>
                 )}
 
-
-                {selectedProject.source_code_link && (
-                    <a
-                        href={selectedProject.source_code_link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="button button_hover mt-4 inline-block silkscreen-regular"
-                    >
-                        View Source Code
-                    </a>
-                )}
-                {selectedProject.external_link && (
-                    <a
-                        href={selectedProject.external_link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="button button_hover mt-4 inline-block silkscreen-regular"
-                    >
-                        See More
-                    </a>
-                )}
+                {/* Action Buttons - Enhanced */}
+                <div className="flex flex-wrap gap-3 mt-6">
+                    {selectedProject.source_code_link && (
+                        <a
+                            href={selectedProject.source_code_link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="button silkscreen-regular transition-all duration-300 transform hover-device:hover:scale-105 hover-device:hover:brightness-125 hover-device:hover:shadow-lg hover-device:hover:shadow-[#6357b3]/50 active:scale-95"
+                        >
+                            View Source Code
+                        </a>
+                    )}
+                    {selectedProject.external_link && (
+                        <a
+                            href={selectedProject.external_link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="button silkscreen-regular transition-all duration-300 transform hover-device:hover:scale-105 hover-device:hover:brightness-125 hover-device:hover:shadow-lg hover-device:hover:shadow-[#6357b3]/50 active:scale-95"
+                        >
+                            See More
+                        </a>
+                    )}
+                </div>
             </div>
         </div>
     );
