@@ -133,7 +133,7 @@ export default function MultiFilters({ openOverlay }) {
                     {filters.map((category, index) => (
                         <button
                             onClick={() => handleFilterButtonClick(category)}
-                            className={`button flex-1 px-2 sm:px-3 py-1.5 sm:py-2 text-[10px] sm:text-sm md:text-base transition-all duration-300 transform active:scale-95 touch-none ${
+                            className={`button flex-1 px-2 sm:px-3 py-1.5 sm:py-2 text-[10px] sm:text-sm md:text-base transition-all duration-300 transform active:scale-95 ${
                                 selectedFilters?.includes(category) 
                                     ? "active shadow-lg shadow-[#6357b3]/60 brightness-125 hover-device:hover:brightness-125 hover-device:hover:scale-105" 
                                     : "hover-device:hover:brightness-150 hover-device:hover:shadow-md hover-device:hover:shadow-[#6357b3]/40 hover-device:hover:scale-105"
@@ -149,7 +149,7 @@ export default function MultiFilters({ openOverlay }) {
                 <div className="relative inline-block" ref={dropdownRef}>
                     <button
                         onClick={() => setDropdownOpen((o) => !o)}
-                        className={`button flex items-center gap-2 px-2 sm:px-3 py-1.5 sm:py-2 text-[10px] sm:text-sm md:text-base transition-all duration-300 transform active:scale-95 touch-none ${
+                        className={`button flex items-center gap-2 px-2 sm:px-3 py-1.5 sm:py-2 text-[10px] sm:text-sm md:text-base transition-all duration-300 transform active:scale-95 ${
                             selectedTags.length > 0 
                                 ? "active shadow-lg shadow-[#6357b3]/60 brightness-125 hover-device:hover:brightness-125 hover-device:hover:scale-105" 
                                 : "hover-device:hover:brightness-150 hover-device:hover:shadow-md hover-device:hover:shadow-[#6357b3]/40 hover-device:hover:scale-105"
@@ -223,7 +223,7 @@ export default function MultiFilters({ openOverlay }) {
                     filteredItems.slice(0, visibleCount).map((item, idx) => (
                         <div
                             key={`items-${idx}`}
-                            className="item bg-tertiary p-5 sm:max-w-[340px] w-full mb-3 cursor-pointer border-4 border-t-white/10 border-l-white/10 border-b-black-100 border-r-black-100 rounded-none transition-all duration-300 transform active:scale-95 group touch-none hover-device:hover:scale-105 hover-device:hover:shadow-2xl hover-device:hover:shadow-[#6357b3]/50"
+                            className="item bg-tertiary p-5 sm:max-w-[340px] w-full mb-3 cursor-pointer border-4 border-t-white/10 border-l-white/10 border-b-black-100 border-r-black-100 rounded-none transition-all duration-300 transform active:scale-95 group hover-device:hover:scale-105 hover-device:hover:shadow-2xl hover-device:hover:shadow-[#6357b3]/50"
                             onClick={() => openOverlay(item)}
                             onMouseEnter={() => setHoveredCardIndex(idx)}
                             onMouseLeave={() => setHoveredCardIndex(null)}
