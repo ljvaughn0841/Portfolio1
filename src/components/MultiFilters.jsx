@@ -10,9 +10,23 @@ TagPill.propTypes = {
 };
 
 const getAllTags = () => {
+    /**
+     *  Function that gathers the tags listed in projects (from index.js)
+     *  Also organizes the colored tags as listed in TAG_COLORS so that important tags can be kept upfront.
+     *  Not seeing a specific tag on there that is listed in colors? Its because its not on a project yet. 
+     *  This way i dont add unnecesary tags to the list (if projects are removed or something).
+    */
     const tagSet = new Set();
+
     projects.forEach((p) => (p.tags || []).forEach((t) => tagSet.add(t)));
-    return [...tagSet].sort();
+
+    const coloredTags = Object.keys(TAG_COLORS).filter((tag) => tagSet.has(tag));
+
+    const uncoloredTags = [...tagSet]
+        .filter((tag) => !TAG_COLORS[tag])
+        .sort();
+
+    return [...coloredTags, ...uncoloredTags];
 };
 
 const allTags = getAllTags();
