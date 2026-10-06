@@ -55,7 +55,7 @@ const NavBar = () => {
                 </div>
                 <img src={toggle ? close : menu} alt="logo" className="w-9 h-9 object-contain" onClick={() => setToggle((prev) => !prev)}/>
 
-                <div className={`${!toggle ? 'hidden' : 'flex'} absolute top-[78px] right-0 z-10 rounded-xl`}>
+                <div className={`${!toggle ? 'hidden' : 'flex'} absolute top-[76px] right-0 z-10 rounded-xl`}>
                     <ul className="list-none flex justify-end items-start flex-col gap-5 tiny5-regular bg-tertiary pr-10 pl-5 pt-2 pb-2">
                         {navLinks.map((Link) => (
                     <li key={Link}
