@@ -123,7 +123,7 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                     </div>
                 )}
 
-                <p className="tiny5-regular sm:text-[20px] text-[16px] mb-4">{selectedProject.description}</p>
+                <p className="roboto-mono-font sm:text-[16px] text-[14px] mb-4">{selectedProject.description}</p>
 
                 {/* Tags - Enhanced to match TagPill */}
                 {selectedProject.tags?.length > 0 && (

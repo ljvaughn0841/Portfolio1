@@ -288,6 +288,24 @@ body:has(.card[data-color="green"]:hover) {
   image-rendering: crisp-edges;
 }
 
+@supports (animation-timeline: scroll()) and (animation-range: 0px 100px) and (translate: 0px 1px) {
+  .parallax-layer {
+    animation: parallax-move linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px var(--scroll-distance);
+    will-change: translate;
+  }
+
+  @keyframes parallax-move {
+    from {
+      translate: 0 0;
+    }
+    to {
+      translate: 0 var(--travel);
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .sprite-1{
     position: absolute;
@@ -331,6 +349,7 @@ body:has(.card[data-color="green"]:hover) {
   top: 220px;
   z-index: 2;
   margin-left: 0px;
+  will-change: transform;
 }}
 
 .sprite-cat {
@@ -338,7 +357,7 @@ body:has(.card[data-color="green"]:hover) {
   width: 450px;
   z-index: 3;
   margin-left: 50%;
-  margin-top: 700px;
+  margin-top: 800px;
 }
 
 @media (max-width: 767px){
@@ -347,7 +366,7 @@ body:has(.card[data-color="green"]:hover) {
   width: 200px;
   z-index: 3;
   margin-left: 45%;
-  margin-top: 650px;
+  margin-top: 1760px;
 }}
 
 .sprite-painting {
@@ -402,6 +421,14 @@ h1 {
   font-weight: 400;
   font-style: normal;
 }
+
+.roboto-mono-font {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 
 /* Projects Section */

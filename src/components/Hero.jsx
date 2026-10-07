@@ -20,6 +20,8 @@ const ANIMATION_CONFIG = {
             decor: 1100,
             painting: 804,
         },
+        SMOOTHING: 0.08, // 0.08 = smoother/laggier, 0.2 = snappier
+
     },
     desktop: {
         scrollDistance: 800,
@@ -30,6 +32,7 @@ const ANIMATION_CONFIG = {
             decor: 230,
             painting: 152,
         },
+        SMOOTHING: 0.2, // 0.08 = smoother/laggier, 0.2 = snappier
     },
 };
 
@@ -43,31 +46,50 @@ const Hero = () => {
     const animationConfig = window.innerWidth < MOBILE_BREAKPOINT
         ? ANIMATION_CONFIG.mobile
         : ANIMATION_CONFIG.desktop;
-    const { scrollDistance, layerTravel, desktop_start } = animationConfig;
-
+    const { scrollDistance, layerTravel, desktop_start, SMOOTHING } = animationConfig;
+    const layerStyle = (travel) => ({
+        '--travel': `${travel}px`,
+        '--scroll-distance': `${scrollDistance}px`,
+    });
 
     useEffect(() => {
-        const updateAnimation = () => {
+        const supportsScrollTimeline = Boolean(
+            window.CSS?.supports?.('animation-timeline: scroll()')
+            && window.CSS?.supports?.('animation-range: 0px 100px')
+            && window.CSS?.supports?.('translate: 0px 1px')
+        );
+        let targetScroll = window.scrollY;
+        let currentScroll = window.scrollY; // start in sync so a restored scroll position doesn't animate in
+        let lastFrame = null;
+        let lastTime = 0;
+        let rafId = null;
 
-            const progress = Math.min(window.scrollY / scrollDistance, 1);
-            
+        const updateSpritesheet = (scrollY) => {
             const frameIndex = Math.min(
                 Math.floor(
                     Math.min(
-                        Math.max((window.scrollY - 
-                            desktop_start
-                        ) / scrollDistance, 0), 1
-                    ) * TOTAL_FRAMES) -1,
+                        Math.max((scrollY - desktop_start) / scrollDistance, 0), 1
+                    ) * TOTAL_FRAMES) - 1,
                 TOTAL_FRAMES
             );
 
-            desktopSpritesheetRef.current?.goToAndPause(frameIndex);
+            // Only touch the spritesheet when the frame actually changes
+            if (frameIndex !== lastFrame) {
+                desktopSpritesheetRef.current?.goToAndPause(frameIndex);
+                lastFrame = frameIndex;
+            }
+        };
 
+        const renderFallback = (scrollY) => {
+            const progress = Math.min(scrollY / scrollDistance, 1);
+            updateSpritesheet(scrollY);
+
+            if (characterRef.current) {
+                characterRef.current.style.transform =
+                    `translate3d(0, ${progress * layerTravel.character}px, 0)`;
+            }
             if (desktopRef.current) {
                 desktopRef.current.style.marginTop = `${progress * layerTravel.desktop}px`;
-            }
-            if (characterRef.current) {
-                characterRef.current.style.marginTop = `${progress * layerTravel.character}px`;
             }
             if (decorRef.current) {
                 decorRef.current.style.marginTop = `${progress * layerTravel.decor}px`;
@@ -77,13 +99,51 @@ const Hero = () => {
             }
         };
 
-        updateAnimation();
-        window.addEventListener('scroll', updateAnimation, { passive: true });
+        const tick = (time) => {
+            const dt = lastTime ? Math.min(time - lastTime, 50) : 16.67;
+            lastTime = time;
+
+            // Frame-rate independent easing
+            const factor = 1 - Math.pow(1 - SMOOTHING, dt / 16.67);
+            currentScroll += (targetScroll - currentScroll) * factor;
+
+            // Snap when close enough, then stop the loop
+            if (Math.abs(targetScroll - currentScroll) < 0.1) {
+                currentScroll = targetScroll;
+                renderFallback(currentScroll);
+                rafId = null;
+                lastTime = 0;
+                return;
+            }
+
+            renderFallback(currentScroll);
+            rafId = requestAnimationFrame(tick);
+        };
+
+        const onScroll = () => {
+            targetScroll = window.scrollY;
+            if (supportsScrollTimeline) {
+                updateSpritesheet(targetScroll);
+                return;
+            }
+
+            if (rafId === null) {
+                rafId = requestAnimationFrame(tick);
+            }
+        };
+
+        if (supportsScrollTimeline) {
+            updateSpritesheet(currentScroll);
+        } else {
+            renderFallback(currentScroll);
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
 
         return () => {
-            window.removeEventListener('scroll', updateAnimation);
+            window.removeEventListener('scroll', onScroll);
+            if (rafId !== null) cancelAnimationFrame(rafId);
         };
-    }, [animationConfig, scrollDistance, layerTravel]);
+    }, [animationConfig, scrollDistance, layerTravel, desktop_start, SMOOTHING]);
 
     return (
         <div className="hero-section overflow-hidden relative" id="Home">
@@ -96,7 +156,12 @@ const Hero = () => {
                 </h1>
             </div>
 
-            <div className="sprite relative" id="paint" ref={paintingRef}>
+            <div
+                className="sprite relative parallax-layer"
+                id="paint"
+                ref={paintingRef}
+                style={layerStyle(layerTravel.painting)}
+            >
                 <img
                     src={painting}
                     className="absolute right-[55%] top-[20px] w-[120px] md:top-[40px] md:w-48"
@@ -104,7 +169,12 @@ const Hero = () => {
                 />
             </div>
 
-            <div className="sprite relative" id="decor" ref={decorRef}>
+            <div
+                className="sprite relative parallax-layer"
+                id="decor"
+                ref={decorRef}
+                style={layerStyle(layerTravel.decor)}
+            >
                 <img
                     src={bg_items}
                     className="absolute left-[70%] top-[100px] w-[500px] max-w-none pl-10 md:left-[70%] md:top-[0px] md:w-[800px]"
@@ -113,7 +183,12 @@ const Hero = () => {
                 />
             </div>
 
-            <div className="sprite sprite-1 w-full" id="desktop" ref={desktopRef}>
+            <div
+                className="sprite sprite-1 w-full parallax-layer"
+                id="desktop"
+                ref={desktopRef}
+                style={layerStyle(layerTravel.desktop)}
+            >
                 <SpriteSheet
                     image={desktop_spritesheet}
                     widthFrame={200}
@@ -129,7 +204,12 @@ const Hero = () => {
                 />
             </div>
 
-            <div className="sprite sprite-me" id="me" ref={characterRef}>
+            <div
+                className="sprite sprite-me parallax-layer"
+                id="me"
+                ref={characterRef}
+                style={layerStyle(layerTravel.character)}
+            >
                 <SpriteSheet
                     image={me}
                     widthFrame={83}
