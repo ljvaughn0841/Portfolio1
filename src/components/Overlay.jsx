@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import arrow2 from "../assets/arrow2.png";
 import { TAG_COLORS } from "../constants";
 
+// TODO: Might need to have functionality where you can click the image to expand it. Hard to see some details. 
+// That or start making more writeups and places where viewers can go examine project results in more detail / clarity
+
 const DEFAULT_TAG_COLOR = { bg: "#3a3a4a", text: "#ccccdd" };
 
 const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
@@ -75,6 +78,15 @@ const Overlay = ({ selectedProject, isOverlayOpen, closeOverlay }) => {
                                     alt={`${selectedProject.name} screenshot ${activeImageIndex + 1}`}
                                     className="h-full w-full object-contain"
                                 />
+
+                                {/* Sub Description of Active Images */}
+                                {/* TODO: GET NEW LINES WORKING HERE SO YOU CAN ORGANIZE TEXT BETTER */}
+                                {typeof selectedProject.image_desc?.[activeImageIndex] === "string" &&
+                                    selectedProject.image_desc[activeImageIndex].trim() !== "" && (
+                                        <p className="absolute bottom-3 right-3 max-w-[80%] bg-black/70 px-3 py-2 text-right text-sm text-white sm:text-base">
+                                            {selectedProject.image_desc[activeImageIndex]}
+                                        </p>
+                                    )}
 
                                 {showImageNavigation && (
                                     <div className="hidden sm:block">
@@ -183,6 +195,7 @@ Overlay.propTypes = {
         image2: PropTypes.string,
         image3: PropTypes.string,
         images: PropTypes.arrayOf(PropTypes.string),
+        image_desc: PropTypes.arrayOf(PropTypes.string),
         tags: PropTypes.arrayOf(PropTypes.string),
         source_code_link: PropTypes.string,
         external_link: PropTypes.string,

@@ -31,12 +31,17 @@ import datasci from "../assets/DataSci.png";
 import web from "../assets/Web.png";
 import wave from "../assets/wave_browser_project.png";
 import foresight from "../assets/foresight_project.png";
+import foresight2 from "../assets/foresight2.png";
 import solarroof from "../assets/solarroof.png";
+import khviii from "../assets/khviii.jpg"
 import tradenetwork1 from "../assets/trade_network1.png";
+import tradenetwork2 from "../assets/trade_distribution.png"
 import tumor from "../assets/tumor.png";
 import fontinator from "../assets/fontinator.png";
 import fontinator_logo from "../assets/fontinator_logo.jpg";
 import font_network from "../assets/font_network.png"
+import fontinator_demo from "../assets/fontinator.gif"
+
 
   export const navLinks = [
     {
@@ -118,6 +123,7 @@ export const TAG_COLORS = {
       category: 'Software',
       image: wave,
       images: [wave],
+      image_desc: ["Wave Browser's initial look on android"],
       external_link: "https://wavebrowser.com/",
       tags: ["C++", "Java"],
     },
@@ -133,31 +139,11 @@ export const TAG_COLORS = {
       category:'Data Analytics',
       image: font_network,
       images: [font_network],
+      image_desc:["Arabic Font Similarity Network (Interact with it on the See More page!)"],
       // TODO: This will change in the future when the repo has been moved to the Lab this needs to be updated
       source_code_link: "https://github.com/Aditya-Khadye/TheScriptGap",
       external_link: "https://aditya-khadye.github.io/TheScriptGap/",
       tags: ["Python", "BigQuery"],
-    },
-    {
-      name: "ForeSight",
-      description:
-        "Fore Sight was created as a group project for our Computer Networks class at FGCU. It utilizes an AI trained for Monocular Depth Estimation called MiDaS to produce a depth map then detects hard edges in the depth map using Canny Edge Detection to find potential hazards.",
-      category: 'Software',
-      image: foresight,
-      images: [foresight],
-      source_code_link: "https://github.com/ljvaughn0841/ForeSight-FGCU",
-      tags: ["Python", "OpenCV", "PyTorch"],
-    },
-    {
-      name: "KnightHacks VII Winner - Watt Are You Doing?",
-      description:
-        "I collaborated with a team to build a Streamlit web app that generates personalized solar reports for consumers. The application integrates Google’s Geocoding and Solar APIs to map user addresses, assess roof size and environmental factors, and evaluate solar potential. I also developed a forecasting model to estimate lifetime savings from solar adoption, helping users understand both the environmental and financial benefits of switching to solar.",
-      category:'Data Analytics',
-      image: solarroof,
-      images: [solarroof],
-      source_code_link: "https://github.com/jtran6796/Efficient-Energy",
-      external_link: "https://devpost.com/software/wattareyoudoing",
-      tags: ["Python", "Streamlit", "Google APIs"],
     },
     {
       name: "Trade Network Analysis",
@@ -165,7 +151,10 @@ export const TAG_COLORS = {
         "I analyzed over 17,000 international trade routes across 226 countries to model the global food trade network. Using community detection methods, I identified clusters and patterns in trade relationships, then evaluated the network’s resilience under simulated disruptions to uncover key vulnerabilities. The project was implemented with Python, OpenCV, NumPy, Matplotlib, and PyTorch.",
       category:'Data Analytics',
       image: tradenetwork1,
-      images: [tradenetwork1],
+      images: [tradenetwork1, tradenetwork2],
+      image_desc: ["Food Trade Network Nodes Colored by Cluster (can see USA, BRICS, South Africa, Middle East Trade Alliances)",
+        "Trade Balnace Graph (Green for Strong Exporter, Blue for Strong Importer)"
+      ],
       // external_link: "WIP",
       tags: ["Python", "Gephi"],
     },
@@ -189,8 +178,35 @@ export const TAG_COLORS = {
         `,
       category:'Data Analytics',
       image: fontinator,
-      images: [fontinator, fontinator_logo],
+      images: [fontinator],
+      image_desc: [""],
+      source_code_link: "https://github.com/ljvaughn0841/TheFontinator",
       // external_link: "WIP",
       tags: ["Python", "PyTorch"],
+    },
+    
+    {
+      name: "KnightHacks VII Winner - Watt Are You Doing?",
+      description:
+        "I collaborated with a team to build a Streamlit web app that generates personalized solar reports for consumers. The application integrates Google’s Geocoding and Solar APIs to map user addresses, assess roof size and environmental factors, and evaluate solar potential. I also developed a forecasting model to estimate lifetime savings from solar adoption, helping users understand both the environmental and financial benefits of switching to solar.",
+      category:'Data Analytics',
+      image: solarroof,
+      images: [khviii],
+      image_desc: ["Knight Hacks VII Team"],
+      source_code_link: "https://github.com/jtran6796/Efficient-Energy",
+      external_link: "https://devpost.com/software/wattareyoudoing",
+      tags: ["Python", "Streamlit", "Google APIs"],
+    },
+    
+    {
+      name: "ForeSight",
+      description:
+        "Fore Sight was created as a group project for our Computer Networks class at FGCU. It utilizes an AI trained for Monocular Depth Estimation called MiDaS to produce a depth map then detects hard edges in the depth map using Canny Edge Detection to find potential hazards.",
+      category: 'Software',
+      image: foresight,
+      images: [foresight, foresight2],
+      image_desc: ["Canny Edge Detection", "MiDaS Depth Estimation"],
+      source_code_link: "https://github.com/ljvaughn0841/ForeSight-FGCU",
+      tags: ["Python", "OpenCV", "PyTorch"],
     },
   ];

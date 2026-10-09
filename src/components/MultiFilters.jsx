@@ -284,7 +284,7 @@ export default function MultiFilters({ openOverlay }) {
                     {visibleCount < filteredItems.length && (
                         <button
                             onClick={() => setVisibleCount((count) => count + projectsPerBatch)}
-                            className="button px-4 py-2 text-xs sm:text-sm transition-all duration-300 transform active:scale-95 hover-device:hover:brightness-150 hover-device:hover:shadow-md hover-device:hover:shadow-[#6357b3]/40 hover-device:hover:scale-105"
+                            className="button roboto-mono-font px-4 py-2 text-xs sm:text-sm transition-all duration-300 transform active:scale-95 hover-device:hover:brightness-150 hover-device:hover:shadow-md hover-device:hover:shadow-[#6357b3]/40 hover-device:hover:scale-105"
                         >
                             Show More
                         </button>
@@ -292,7 +292,7 @@ export default function MultiFilters({ openOverlay }) {
                     {visibleCount > projectsPerBatch && (
                         <button
                             onClick={() => setVisibleCount(projectsPerBatch)}
-                            className="button px-4 py-2 text-xs sm:text-sm transition-all duration-300 transform active:scale-95 hover-device:hover:brightness-150 hover-device:hover:shadow-md hover-device:hover:shadow-[#6357b3]/40 hover-device:hover:scale-105"
+                            className="button roboto-mono-font px-4 py-2 text-xs sm:text-sm transition-all duration-300 transform active:scale-95 hover-device:hover:brightness-150 hover-device:hover:shadow-md hover-device:hover:shadow-[#6357b3]/40 hover-device:hover:scale-105"
                         >
                             Show Less
                         </button>
